@@ -11,10 +11,11 @@
 <body>
 <!-- maqueta -->
 <div class="d-flex flex-column  min-vh-100">
+  
 <!-- Inicio del navbar -->
 <nav class="navbar navbar-dark navbar-expand-md bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand text-info" href="#">Gravity games</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

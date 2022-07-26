@@ -1,3 +1,5 @@
+
+<!-- Conexion a nuestra base de datos -->
 <?php
 $conn = new mysqli("localhost", "root", "", "gravity_games");
 
