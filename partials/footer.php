@@ -1,4 +1,5 @@
-<footer class="position-absolute bottom-0 text-center bg-dark w-100 text-white"> Gravity games 2022</footer>
+<footer class="mt-auto text-center w-100 bg-dark d-block text-white"> Gravity games 2022</footer>
+</div>
 <script src="./bootstrap.min.js"></script>
 </body>
 </html>
