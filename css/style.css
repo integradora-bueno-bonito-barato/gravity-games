@@ -2,9 +2,7 @@
     max-width: 3em;
     height: auto;
 }
-.tarjeta {
-    width: 20em;
-}
+
 .tarjeta-contenido p, .tarjeta-contenido h3, h1 {
     margin:0;
     max-width: 100%;
