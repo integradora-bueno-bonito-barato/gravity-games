@@ -11,3 +11,5 @@
 <body>
 <!-- maqueta -->
 <?php include('partials/nav.php')?>
+<div class="bg-dark p-md-3">
+<div class="container p-0 rounded-3 bg-white">

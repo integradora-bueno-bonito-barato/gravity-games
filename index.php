@@ -2,6 +2,7 @@
 y poder incluir codigo en otras partes de la pagina. -->
 
 <?php include('./partials/header.php');?>
+<?php include('./partials/welcome.php');?>
 <?php include('./partials/carousel.php');?>
 <?php include('./partials/cards-container.php');?>
 <!-- body -->
@@ -9,5 +10,7 @@ y poder incluir codigo en otras partes de la pagina. -->
 
 
 <!-- body -->
+
+
 
 <?php include('./partials/footer.php');?>
