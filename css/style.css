@@ -5,11 +5,12 @@
 .tarjeta {
     width: 20em;
 }
-.tarjeta-contenido p, .tarjeta-contenido h3 {
+.tarjeta-contenido p, .tarjeta-contenido h3, h1 {
     margin:0;
+    max-width: 100%;
 }
 .tarjeta img {
-    max-width: 100%;
+    width: 177.75px;
     height: 250px;
 }
 
