@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+<nav class="navbar navbar-light navbar-expand-lg bg-light">
   <div class="container-md-fluid container">
     <a class="navbar-brand d-flex gap-1 align-items-center me-md-4" href="index.php">
       <img class="" src="assets/img/planeta.png" alt="Foto de pizza planeta :v">
