@@ -5,12 +5,12 @@ y poder incluir codigo en otras partes de la pagina. -->
 <?php include('./partials/welcome.php');?>
 <?php include('./partials/carousel.php');?>
 <?php include('./partials/cards-container.php');?>
+
 <!-- body -->
 
-<h1 class="p-5 text-center">Hello world</h1>
 
-este es un c
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis harum sed distinctio deserunt veniam voluptates debitis odit ut, illo quas eum aliquid nihil eveniet tenetur necessitatibus itaque magnam labore earum?
+
+
 
 <!-- body -->
 
