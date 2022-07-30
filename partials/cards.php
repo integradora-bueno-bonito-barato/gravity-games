@@ -48,3 +48,4 @@
         <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
     </div>
 </div>
+
