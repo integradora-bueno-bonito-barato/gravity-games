@@ -12,7 +12,29 @@
                     <option value="#">Xbox one</option>
                     <option value="#">Xbox Series X</option>
                 </select>
+            </div> <br>
 
+            <div class="form-group">
+                <label for="">Genero</label>
+                <select class="form-control " id="">
+                    <option value="todas">Todas</option>
+                    <option value="#">Aventura</option>
+                    <option value="#">Terror</option>
+                    <option value="#">Arcade</option>
+                    <option value="#">Simulador</option>
+                    <option value="#">Estrategia</option>
+                </select>
+            </div> <br>
+
+            <div class="form-group">
+                <label for="">Caracteristicas</label>
+                <select class="form-control " id="">
+                    <option value="todas">Todas</option>
+                    <option value="#">Un solo jugador</option>
+                    <option value="#">Dos jugadores</option>
+                    <option value="#">Hasta 4 jugadores de manera local</option>
+                    <option value="#">En linea</option>
+                </select>
             </div>
             
         </div>
