@@ -18,7 +18,10 @@
           Login
       </button> | 
         <a class="btn btn-outline-success" href="signup.php">Register</a>
+
+
       </div>
     </div>
   </div>
+  
 </nav>

@@ -49,3 +49,55 @@
     </div>
 </div>
 
+<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
+    <img class="d-block" src="assets/img-juegos/Borderlands 3.webp" alt="">
+    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
+        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
+            <h3 class="fs-5">Borderlands 3</h3>
+            <p>$349.99</p>
+        </div>
+        <p>Plataforma:</p>
+        <p>Steam</p>
+        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
+    </div>
+</div>
+
+<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
+    <img class="d-block" src="assets/img-juegos/gears 5.webp" alt="">
+    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
+        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
+            <h3 class="fs-5">Gears 5</h3>
+            <p>$543.99</p>
+        </div>
+        <p>Plataforma:</p>
+        <p>Xbox Series X</p>
+        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
+    </div>
+</div>
+
+<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
+    <img class="d-block" src="assets/img-juegos/Halo.jpg" alt="">
+    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
+        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
+            <h3 class="fs-5">Halo Infinite Campaña</h3>
+            <p>$659.99</p>
+        </div>
+        <p>Plataforma:</p>
+        <p>Xbox Series X</p>
+        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
+    </div>
+</div>
+
+<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
+    <img class="d-block" src="assets/img-juegos/Skyrim_Cover.webp" alt="">
+    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
+        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
+            <h3 class="fs-5">Skyrim</h3>
+            <p>$459.99</p>
+        </div>
+        <p>Plataforma:</p>
+        <p>Xbox Series X</p>
+        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
+    </div>
+</div>
+
