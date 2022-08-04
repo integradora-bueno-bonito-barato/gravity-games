@@ -5,10 +5,8 @@ y poder incluir codigo en otras partes de la pagina. -->
 <?php include('./partials/welcome.php');?>
 <?php include('./partials/carousel.php');?>
 <?php include('./partials/cards-container.php');?>
+
 <!-- body -->
-
-<h1 class="p-5 text-center">Hello world</h1>
-
 
 
 <!-- body -->
