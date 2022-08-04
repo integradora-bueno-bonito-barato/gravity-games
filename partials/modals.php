@@ -2,28 +2,21 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Hora de volar!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="#" method="POST">  
       <div class="modal-body">
-      <form action="#" method="#">
-                <div id="cuadro">
-                        <center>
-                        <h1>Inicia sesion</h1>
-                        Email o nombre de usuario <br> <input type="text" name="Email" placeholder="Ingresa tu email o nombre de usuario"> <br> <br>
-                        Contraseña <br> <input type="password" name="pass" placeholder="Ingresa tu contraseña"> <br> <br>
-                        <input type="submit" name="Guardar" value="Iniciar sesion"> <br> 
-                        <label for="">O registrarse con</label> <br> 
-                        <input id="boton4" type="submit" name="Google" value="Google"> 
-                        <input id="boton4" type="submit" name="Facebook" value="Facebook"> 
-                      </center>
-                    </form>
-                </div>
+        <label for="user">Email o nombre de usuario</label>
+        <input placeholder="Ingresa tu Email o Nombre de usuario" type="text" class="form-control" name="user" id="user">
+        <label for="password">Contraseña</label>
+        <input placeholder="Ingresa tu contraseña" type="password" class="form-control" name="password" id="password">
+         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-success w-100">Iniciar sesión</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
