@@ -20,12 +20,12 @@
         </div>
         <div class="row align-items-center mt-5">
             <div class=" col-md-6 text-center offset-md-1">
-                <img class="" src="assets/img/planeta.png" alt="Foto de pizza planeta :v">
+                <img class="img-fluid" src="assets/img/planeta.png" alt="Foto de pizza planeta :v">
                 <h1 class="fs-1">Hola! Es genial conocerte.</h1>
                 <h2>Hora de despegar!</h2>
             </div>
             <div class="col-md-4 p-4">
-                <form class="bg-primary p-4 rounded-3 " action="#">
+                <form class="bg-white text-black p-4 rounded-3 " action="#">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" class="form-control">
                     <label for="apellidos">Apellidos</label>
