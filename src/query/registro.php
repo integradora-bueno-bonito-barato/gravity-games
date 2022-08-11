@@ -2,7 +2,6 @@
 
 namespace MyApp\Query;
 use MyApp\Data\Database;
-use PDO;
 use PDOException;
 
 class Registrar {
@@ -16,12 +15,12 @@ class Registrar {
        catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-    }
+    }   
  
     public function verificarpassword($pass, $pass2) {
         if ($pass != $pass2) {
         echo "Las contraseñas no coinciden";
-        header('refresh:2; ../registro.php');
+        header('refresh:2 ../registro.php');
         }
     }
 
