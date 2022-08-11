@@ -25,6 +25,13 @@
                 <h2>Hora de despegar!</h2>
             </div>
             <div class="col-md-4 p-4">
+            <?php
+                    session_start();
+                    if(isset($_SESSION['error_contraseña'])) {
+                        echo '<div class="alert alert-danger text-center">'.$_SESSION['error_contraseña'].'</div>';
+                        unset($_SESSION['error_contraseña']);
+                    } ;
+                    ?>
                 <form class="bg-white text-black p-4 rounded-3 " action="scripts/registrarcliente.php" method="post">
                     <label for="nombre">Nombre</label>
                     <input required type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" class="form-control">

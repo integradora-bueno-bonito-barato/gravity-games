@@ -5,7 +5,7 @@ use MyApp\Data\Database;
 use PDOException;
 
 class Registrar {
-    public function ejecutar($qry){
+    public function registrar($qry){
         try {
             $cc = new Database("gravity_games", "root", "");
             $objetoPDO = $cc->getPDO();
@@ -19,8 +19,9 @@ class Registrar {
  
     public function verificarpassword($pass, $pass2) {
         if ($pass != $pass2) {
-        echo "Las contraseñas no coinciden";
-        header('refresh:2 ../registro.php');
+        session_start();
+        $_SESSION['error_contraseña'] = "Las contraseñas no coinciden";
+        header('location: ../registro.php');
         }
     }
 
