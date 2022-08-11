@@ -1,3 +1,29 @@
+
+<?php
+
+use MyApp\Query\Select;
+
+require_once('vendor/autoload.php');
+
+$query = new Select();
+$chain = "SELECT * FROM lista_juegos";
+$result = $query->Seleccionar($chain);
+foreach($result as $fila){?>
+    <div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
+    <img class="d-block" src="<?php echo $fila->img?>" alt="">
+    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
+        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
+            <h3 class="fs-5"><?php echo $fila->juego ?></h3>
+            <p><?php echo "$". $fila->precio ?></p>
+        </div>
+        <p>Plataforma: </p>
+        <p><?php echo $fila->plataforma?></p>
+        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
+    </div>
+</div>
+<?php };?>
+
+?>
 <div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
     <img class="d-block" src="assets/img-juegos/elden-ring.jpeg" alt="">
     <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
@@ -7,96 +33,6 @@
         </div>
         <p>Plataforma:</p>
         <p>Steam</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-
-<div class="tarjeta my-2  mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/outlast.jpg" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Outlast</h3>
-            <p>$399.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Steam</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/silent-hill.jpg" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-flex flex-column  justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Silent Hill</h3>
-            <p>$444.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Playstation 4</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-
-<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/granny.png" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Granny</h3>
-            <p>$124.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Steam</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-
-<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/Borderlands 3.webp" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Borderlands 3</h3>
-            <p>$349.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Steam</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-
-<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/gears 5.webp" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Gears 5</h3>
-            <p>$543.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Xbox Series X</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-
-<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/Halo.jpg" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Halo Infinite Campaña</h3>
-            <p>$659.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Xbox Series X</p>
-        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
-    </div>
-</div>
-
-<div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
-    <img class="d-block" src="assets/img-juegos/Skyrim_Cover.webp" alt="">
-    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
-        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
-            <h3 class="fs-5">Skyrim</h3>
-            <p>$459.99</p>
-        </div>
-        <p>Plataforma:</p>
-        <p>Xbox Series X</p>
         <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
     </div>
 </div>

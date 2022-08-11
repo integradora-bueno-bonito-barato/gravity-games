@@ -5,7 +5,7 @@
         <h5 class="modal-title" id="exampleModalLabel">Hora de volar!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="#" method="POST">  
+      <form action="views/scripts" method="POST">  
       <div class="modal-body">
         <label for="user">Email o nombre de usuario</label>
         <input placeholder="Ingresa tu Email o Nombre de usuario" type="text" class="form-control" name="user" id="user">
