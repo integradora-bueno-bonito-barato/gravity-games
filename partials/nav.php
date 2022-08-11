@@ -14,10 +14,12 @@
       </form>  
       <div class="session ms-auto mt-2 mt-md-0">
       <?php include('partials/modals.php'); ?>
-      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
+      <div class="sesiones">
+      <button type="button" class="btn my-1 btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
           Login
-      </button> | 
-        <a class="btn btn-outline-success" href="signup.php">Register</a>
+      </button>
+        <a class="btn btn-outline-success" href="views/registro.php">Register</a>
+      </div>
 
 
       </div>
