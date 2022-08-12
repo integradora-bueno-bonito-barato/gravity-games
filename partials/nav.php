@@ -19,7 +19,7 @@
         <?php 
         session_start();
         if(isset($_SESSION['id_cliente'])) { ?>
-        <a class="btn btn-outline-success" href="views/scripts/logout.php"><?php echo $_SESSION['id_cliente'] ?></a>
+        <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
         <?php } else { ?> 
           <button type="button" class="btn my-1 btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
           Login

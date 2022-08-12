@@ -19,8 +19,9 @@ class Registrar {
  
     public function verificarpassword($pass, $pass2) {
         if (strlen($pass) < 6 ) {
+            session_start();
             $_SESSION['error_contraseña'] = "La contraseña debe tener al menos 6 caracteres";
-            header("Location: ../views/registro.php");
+            header("Location: ../registro.php");
             exit;
         }
         if ($pass != $pass2) {
@@ -59,11 +60,10 @@ class Registrar {
         $qry= "select * from cliente where persona = '$id'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
-        $id_cliente = $row['id_cliente'];
         session_start();
-        $_SESSION['id_cliente'] = $id_cliente;
-        header('refresh:2 ../../index.php');
+        $_SESSION['id_cliente'] = $usuario;
         $cc->desconectarDB();
+        header('location: ../../index.php');
     }
 
 }
