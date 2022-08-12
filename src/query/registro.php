@@ -3,7 +3,7 @@
 namespace MyApp\Query;
 use MyApp\Data\Database;
 use PDOException;
-
+use PDO;
 class Registrar {
     public function registrar($qry){
         try {
@@ -18,11 +18,52 @@ class Registrar {
     }   
  
     public function verificarpassword($pass, $pass2) {
+        if (strlen($pass) < 6 ) {
+            $_SESSION['error_contraseña'] = "La contraseña debe tener al menos 6 caracteres";
+            header("Location: ../views/registro.php");
+            exit;
+        }
         if ($pass != $pass2) {
         session_start();
         $_SESSION['error_contraseña'] = "Las contraseñas no coinciden";
         header('location: ../registro.php');
         }
+    }
+    public function verificarusuario($usuario, $email){
+           
+            $cc = new Database("gravity_games", "root", "");
+            $objetoPDO = $cc->getPDO();
+            $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
+            $resultado = $objetoPDO->query($qry);
+            $row = $resultado->fetch(PDO::FETCH_ASSOC);
+            if($row){
+                session_start();
+                $_SESSION['error_contraseña'] = "El usuario o email ya esta en uso";
+                header('location: ../registro.php');
+            }
+
+    }
+
+    public function crearcliente($nombre, $apellidos, $usuario, $email, $hash){
+        $cc = new Database("gravity_games", "root", "");
+        $objetoPDO = $cc->getPDO();
+        $qry = "call crearcliente('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
+        $objetoPDO->query($qry);
+
+        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
+        $resultado = $objetoPDO->query($qry);
+        $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        $id = $row['id_persona'];
+        $qry = "call insertarcliente('$id')";
+        $objetoPDO->query($qry);
+        $qry= "select * from cliente where persona = '$id'";
+        $resultado = $objetoPDO->query($qry);
+        $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        $id_cliente = $row['id_cliente'];
+        session_start();
+        $_SESSION['id_cliente'] = $id_cliente;
+        header('refresh:2 ../../index.php');
+        $cc->desconectarDB();
     }
 
 }
