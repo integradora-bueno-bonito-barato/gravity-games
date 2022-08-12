@@ -9,7 +9,7 @@
             Aquí podrás encontrar los juegos más populares de todos los tiempos.
         </p>
         <div class="">
-            <a href="juegos.php" class="btn btn-success">Ver juegos</a>
+            <a href="views/todos_los_juegos.php" class="btn btn-success">Ver juegos</a>
         </div>
     </section>
     </div>
