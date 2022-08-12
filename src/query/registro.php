@@ -60,6 +60,8 @@ class Registrar {
         $qry= "select * from cliente where persona = '$id'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        $qry= "select * from cliente where persona = '$id'";
+        $resultado = $objetoPDO->query($qry);
         session_start();
         $_SESSION['id_cliente'] = $usuario;
         $cc->desconectarDB();
