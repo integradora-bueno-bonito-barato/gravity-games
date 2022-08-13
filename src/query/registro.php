@@ -54,15 +54,17 @@ class Registrar {
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        $n_usuario = $row['n_usuario'];
         $id = $row['id_persona'];
         $qry = "call insertarcliente('$id')";
         $objetoPDO->query($qry);
         $qry= "select * from cliente where persona = '$id'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
-        $qry= "select * from cliente where persona = '$id'";
+        $qry= "call crearcarrito('$row[id_cliente]'";
         $resultado = $objetoPDO->query($qry);
         session_start();
+        $_SESSION['n_usuario'] = $n_usuario;
         $_SESSION['id_cliente'] = $usuario;
         $cc->desconectarDB();
         header('location: ../../index.php');
