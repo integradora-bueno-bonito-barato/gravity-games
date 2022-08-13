@@ -17,7 +17,13 @@ class Registrar {
         }
     }   
  
-    public function verificarpassword($pass, $pass2) {
+   
+   
+
+    public function crearcliente($nombre, $apellidos, $usuario, $email, $pass, $pass2){
+       
+        $cc = new Database("gravity_games", "root", "");
+        $objetoPDO = $cc->getPDO();
         if (strlen($pass) < 6 ) {
             session_start();
             $_SESSION['error_contraseña'] = "La contraseña debe tener al menos 6 caracteres";
@@ -28,26 +34,18 @@ class Registrar {
         session_start();
         $_SESSION['error_contraseña'] = "Las contraseñas no coinciden";
         header('location: ../registro.php');
+        exit;
         }
-    }
-    public function verificarusuario($usuario, $email){
-           
-            $cc = new Database("gravity_games", "root", "");
-            $objetoPDO = $cc->getPDO();
-            $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
-            $resultado = $objetoPDO->query($qry);
-            $row = $resultado->fetch(PDO::FETCH_ASSOC);
-            if($row){
-                session_start();
-                $_SESSION['error_contraseña'] = "El usuario o email ya esta en uso";
-                header('location: ../registro.php');
-            }
-
-    }
-
-    public function crearcliente($nombre, $apellidos, $usuario, $email, $hash){
-        $cc = new Database("gravity_games", "root", "");
-        $objetoPDO = $cc->getPDO();
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
+        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
+        $resultado = $objetoPDO->query($qry);
+        $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        if($row){
+            session_start();
+            $_SESSION['error_contraseña'] = "El usuario o email ya esta en uso";
+            header('location: ../registro.php');
+            exit;
+        }
         $qry = "call crearcliente('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
         $objetoPDO->query($qry);
 
@@ -61,7 +59,6 @@ class Registrar {
         $qry= "select * from cliente where persona = '$id'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
-        echo"$row[id_cliente] ";
         $qry= "call crearcarrito('$row[id_cliente]')";
         $resultado = $objetoPDO->query($qry);
         session_start();
