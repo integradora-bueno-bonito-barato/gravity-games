@@ -1,8 +1,8 @@
 <!-- los includes son para no saturar el codigo de la pagina, 
 y poder incluir codigo en otras partes de la pagina. -->
-
+<?php include 'conexion.php';?>
 <?php 
-  session_start();
+session_start();
 include('./partials/header.php');?>
 <?php include('./partials/welcome.php');?>
 <?php include('./partials/carousel.php');?>
