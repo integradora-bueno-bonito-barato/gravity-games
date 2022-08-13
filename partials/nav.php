@@ -19,29 +19,94 @@
     </button>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <form class="d-flex mt-2 mt-md-0" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>  
-      <div class="session ms-auto mt-2 mt-md-0">
-      <?php include('partials/modals.php'); ?>
-      <div class="sesiones">
-      <?php 
-        
+
+    
+<form method="post">
+  <div class="form-row align-items-center">
+      <input required name="PalabraClave" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ingrese palabra clave">  
+      <input name="buscar" type="hidden" class="form-control mb-2" id="inlineFormInput" value="v">
+    </div>
+    <div class="col-auto">
+   
+      <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+    </div>
+  </div>
+</form>
+
+
+
+<div class="session ms-auto mt-2 mt-md-0">
+  <?php include('partials/modals.php'); ?>
+  <div class="sesiones">
+    
+    <?php 
         if(isset($_SESSION['id_cliente'])  ) { ?>
         <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
         <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
         <?php } else { ?> 
-          <button type="button" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#login">
-          Login
-      </button>
-        <a class="btn btn-outline-success" href="views/registro.php">Register</a>
+  <button type="button" class="btn my-1 btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
+            Login
+          </button>
+          <a class="btn btn-outline-success" href="views/registro.php">Register</a>
+
           <?php } ?> 
-      </div>
-
-
+        </div>
+        
+        
       </div>
     </div>
   </div>
   
 </nav>
+
+<div class="bg-dark p-md-3">
+<div class="container rounded-3 bg-white">
+
+            <?php
+            
+            
+            //AQUI EMPIEZA CODIGO PHP DEL BUSCADOR
+            if(!empty($_POST))
+            {
+              extract($_POST);
+                  $aKeyword = explode(" ", $_POST['PalabraClave']);
+                  $query ="SELECT * FROM juego WHERE nombre like '%" . $aKeyword[0] . "%' OR precio like '%" . $aKeyword[0] . "%'";
+                  
+                 for($i = 1; $i < count($aKeyword); $i++) {
+                    if(!empty($aKeyword[$i])) {
+                        $query .= " OR precio like '%" . $aKeyword[$i] . "%'";
+                    }
+                  }
+                 
+                 $result = $db->query($query);
+                 echo "<br>Has buscado la palabra clave:<b> ". $_POST['PalabraClave']."</b>";
+                                 
+                 if(mysqli_num_rows($result) > 0) {
+                    $row_count=0;
+                    echo "<br><br>Resultados encontrados: ";
+                    echo "<br><table class='table table-striped'>";
+                    echo "<tr>";
+                        echo "<th></th><th>NOMBRE</th><th>PRECIO</th><th></th>";
+                        echo "</tr>";
+                    While($row = $result->fetch_assoc()) {   
+                        $row_count++;                         
+                        
+                        echo "<tr><td> $row_count.- </td>";
+                        echo "<td>". $row['nombre'] ."</td>";
+                        echo "<td>$". $row['precio'] ."</td>";
+                        ?>
+                        <td> <a href="elden-ring.php" class="btn btn-success d-block">Añadir al carrito</a> </td></tr>
+                        <?php
+
+
+                    }
+                    echo "</table>";
+              
+                }
+                else {
+                    echo "<br>Resultados encontrados: Ninguno";
+                
+                }
+            }
+            //AQUI TERMINA EL CODIGO PHP DEL BUSCADOR
+            ?>

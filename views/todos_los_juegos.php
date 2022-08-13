@@ -4,7 +4,7 @@
     <style>
         img
         {
-            object-fit: cover;
+
             width: 100%;
             height: 300px;
         }
@@ -19,7 +19,7 @@
 <body>
 <div class="bg-dark p-md-3">
 <div class="container rounded-3 bg-white">
-    
+    <header class="vh-75 container d-none d-md-block">
     <div class="container">
     <div class="row">
         <div class="p-3 mt-5 d-none d-md-block col-md-4 bg-light rounded-3">
@@ -47,52 +47,44 @@
                     <option value="#">Estrategia</option>
                 </select>
             </div> <br>
-            
+        
+
         </div>
+        
         <div class="col-12 col-md-8">
             <h1 class="text-center text-md-start">Store</h1>
             <div class="contenedor-tarjeta d-md-flex justify-content-evenly flex-wrap ">
 
-                </div>
-                </div>
-                </div>
-                </div>
             <?php
 
+use MyApp\Query\Select;
 
-        use MyApp\Query\Select;
-        require("../vendor/autoload.php");
+require('../vendor/autoload.php');
 
-        $query = new select();
-        $cadena = "SELECT * FROM mostrar_todos_los_juegos";
-        $tabla = $query->seleccionar($cadena);
 
-        echo "<div class='table-responsive'>
-        <table class='table'>
-        <head class='table-dark'>
-        <tr>
-        <th>nombre</th><th>genero</th><th>clasificacion</th><th>plataforma</th><th>precio</th>
-        </tr>
-        </head>
-        <tbody>";
+$query = new Select();
+$chain = "SELECT * FROM gravity_games.mostrar_todos_los_juegos;";
+$result = $query->Seleccionar($chain);
+foreach($result as $filas){?>
+    <div class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
+    <img class="d-block" src="<?php echo $filas->img?>" alt="">
+    <div class="tarjeta-contenido w-100 d-flex flex-column align-items-center align-items-md-start ms-2 ms-0-md">
+        <div class="d-md-flex w-100 justify-content-md-between align-items-md-center">
+            <h3 class="fs-5"><?php echo $filas->nombre ?></h3>
+            <p><?php echo "$". $filas->precio ?></p>
+        </div>
+        <p>Plataforma: </p>
+        <p><?php echo $filas->plataforma?></p>
+        <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a>
+    </div>
+</div>
+<?php };?>
+                </div>
+                </div>
+                </div>
+                </div>
+           
 
-        foreach($tabla as $registro)
-        {
-            echo "<tr>";
-            echo "<td> $registro->nombre </td>";
-            echo "<td> $registro->genero </td>";
-            echo "<td> $registro->clasificacion </td>";
-            echo "<td> $registro->plataforma </td>";
-            echo "<td> $ $registro->precio </td>";?>
-            <td> <a href="elden-ring.php" class="btn btn-success mt-md-2 d-block mt-auto">Añadir al carrito</a> </td>
-            <?php
-        }
-
-        echo "</tbody>
-        </table
-        </div>";
-
-        ?>
                 
 
 <script src="../js/bootstrap.bundle.js"></script>
