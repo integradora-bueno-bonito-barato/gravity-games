@@ -6,20 +6,24 @@ use PDO;
 class Login {
     public function verificarusuario($usuario, $pass){
         
-        $cc = new Database("gravity_games", "root", "");
+        $cc = new Database("gravity_games_beta", "root", "");
         $objetoPDO = $cc->getPDO();
-        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$usuario'";
+        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
-        if($row){
-            if(password_verify($pass, $row['contraseña'])){
-                $qry = "SELECT * FROM cliente WHERE persona = '$row[id_persona]'";
+        
+        echo $usuario;
+        echo $row['n_usuario'];
+        if($row) {
+           
+                $qry = "call clientepersona ($row[id_persona])";
       
        $resultado = $objetoPDO->query($qry);
       
         $row2 = $resultado->fetch(PDO::FETCH_ASSOC);
         if ($row2) {
             session_start();
+            $_SESSION['n_usuario'] = $row2['n_usuario'];
             $_SESSION['id_cliente'] = $row2['id_cliente'];
             header('location: ../../index.php');
             exit;
@@ -34,19 +38,14 @@ class Login {
             header('location: ../../index.php');
             exit;
         }
-            }
-            else{
-                session_start();
-                $_SESSION['error_contraseña'] = "La contraseña es incorrecta";
-                header('location: ../../index.php');
-            }
+           
         }
         else{
             session_start();
             $_SESSION['error_usuario'] = "El usuario no existe";
-            header('location: ../../index.php');
+            echo 'El usuario no existe';
         }
         
-        echo 'No encontre nada';
+        
 }
 }

@@ -6,6 +6,7 @@ y poder incluir codigo en otras partes de la pagina. -->
 include('./partials/header.php');?>
 <?php include('./partials/welcome.php');?>
 <?php include('./partials/carousel.php');?>
+
 <?php include('./partials/cards-container.php');?>
 
 <!-- body -->

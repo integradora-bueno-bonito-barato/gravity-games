@@ -4,7 +4,7 @@
     <style>
         img
         {
-            Prueba con object-fit: cover;
+            object-fit: cover;
             width: 100%;
             height: 300px;
         }
@@ -64,7 +64,7 @@
         require("../vendor/autoload.php");
 
         $query = new select();
-        $cadena = "SELECT * FROM gravity_games.mostrar_todos_los_juegos";
+        $cadena = "SELECT * FROM mostrar_todos_los_juegos";
         $tabla = $query->seleccionar($cadena);
 
         echo "<div class='table-responsive'>

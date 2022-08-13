@@ -26,13 +26,13 @@
       <div class="session ms-auto mt-2 mt-md-0">
       <?php include('partials/modals.php'); ?>
       <div class="sesiones">
-      
-        <?php 
+      <?php 
         
         if(isset($_SESSION['id_cliente'])  ) { ?>
+        <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
         <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
         <?php } else { ?> 
-          <button type="button" class="btn my-1 btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
+          <button type="button" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#login">
           Login
       </button>
         <a class="btn btn-outline-success" href="views/registro.php">Register</a>
