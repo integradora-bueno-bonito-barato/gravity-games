@@ -36,7 +36,8 @@
   <div class="sesiones">
     
     <?php 
-        if(isset($_SESSION['id_cliente'])  ) { ?>
+
+            if(isset($_SESSION['id_cliente'])  ) { ?>
         <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
         <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
         <?php } else { ?> 

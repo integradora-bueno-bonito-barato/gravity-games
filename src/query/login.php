@@ -19,12 +19,17 @@ class Login {
                 $qry = "call clientepersona ($row[id_persona])";
       
        $resultado = $objetoPDO->query($qry);
-      
+        
         $row2 = $resultado->fetch(PDO::FETCH_ASSOC);
+        $qry = "select * from carrito where cliente = '$row2[id_cliente]'";
+        $resultado = $objetoPDO->query($qry);
+        $row3 = $resultado->fetch(PDO::FETCH_ASSOC);
         if ($row2) {
             session_start();
+            $_SESSION['id_carrito'] = $row3['id_carrito'];
             $_SESSION['n_usuario'] = $row2['n_usuario'];
             $_SESSION['id_cliente'] = $row2['id_cliente'];
+            
             header('location: ../../index.php');
             exit;
         }
