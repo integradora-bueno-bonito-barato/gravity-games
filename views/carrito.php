@@ -21,7 +21,7 @@ $cadena = "SELECT juego.img, persona.nombre,juego.nombre AS juego,juego.precio F
 inner JOIN item_carrito on juego.id_juego = item_carrito.juego 
 inner JOIN carrito on carrito.id_carrito = item_carrito.carrito 
 inner JOIN cliente on carrito.cliente= cliente.id_cliente 
-INNER join persona on persona.id_persona=cliente.persona WHERE persona.id_persona=1;
+INNER join persona on persona.id_persona=cliente.persona WHERE persona.id_persona=5;
 ";
 $tabla = $query->Seleccionar($cadena);
 
