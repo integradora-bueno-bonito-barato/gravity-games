@@ -30,12 +30,8 @@
    
       <button type="submit" class="btn btn-primary mb-2">Buscar</button>
     </div>
-  </div>
-</form>
-
-
-
-<div class="session ms-auto mt-2 mt-md-0">
+                  </form>
+                  <div class="session ms-auto mt-2 mt-md-0">
   <?php include('partials/modals.php'); ?>
   <div class="sesiones">
     
@@ -54,13 +50,14 @@
         
         
       </div>
+                </div>
+
+
     </div>
   </div>
   
 </nav>
 
-<div class="bg-dark p-md-3">
-<div class="container rounded-3 bg-white">
 
             <?php
             

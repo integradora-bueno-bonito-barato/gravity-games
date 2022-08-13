@@ -6,7 +6,7 @@ use PDO;
 class Login {
     public function verificarusuario($usuario, $pass){
         
-        $cc = new Database("gravity_games_beta", "root", "");
+        $cc = new Database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario'";
         $resultado = $objetoPDO->query($qry);

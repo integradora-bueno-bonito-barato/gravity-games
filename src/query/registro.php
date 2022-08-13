@@ -7,7 +7,7 @@ use PDO;
 class Registrar {
     public function registrar($qry){
         try {
-            $cc = new Database("gravity_games_beta", "root", "");
+            $cc = new Database("gravity_games", "root", "");
             $objetoPDO = $cc->getPDO();
             $objetoPDO->query($qry);
             $cc->desconectarDB();
@@ -32,7 +32,7 @@ class Registrar {
     }
     public function verificarusuario($usuario, $email){
            
-            $cc = new Database("gravity_games_beta", "root", "");
+            $cc = new Database("gravity_games", "root", "");
             $objetoPDO = $cc->getPDO();
             $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
             $resultado = $objetoPDO->query($qry);
@@ -46,7 +46,7 @@ class Registrar {
     }
 
     public function crearcliente($nombre, $apellidos, $usuario, $email, $hash){
-        $cc = new Database("gravity_games_beta", "root", "");
+        $cc = new Database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
         $qry = "call crearcliente('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
         $objetoPDO->query($qry);
