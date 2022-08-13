@@ -33,7 +33,7 @@ $tabla2 = $query->Seleccionar($cadena2);
             <div class="mb-3 col-4">
             <form action="">
                 <label for="cvv" class="fs-2">Codigo de seguridad</label>
-                <input type="text" name="cvv" id="">
+                <input type="text" maxlength="3" name="cvv" id="">
                 
             </form>
             </div>
