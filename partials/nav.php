@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     
-<form method="post">
+<form class="d-flex gap-1" method="post">
   <div class="form-row align-items-center">
       <input required name="PalabraClave" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Ingrese palabra clave">  
       <input name="buscar" type="hidden" class="form-control mb-2" id="inlineFormInput" value="v">
