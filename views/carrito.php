@@ -15,14 +15,11 @@
 <?php
 use MyApp\Query\Select;
 require("../vendor/autoload.php");
-
+session_start();
+$cliente = $_SESSION['id_cliente'];
+echo $_SESSION['id_cliente'];
 $query = new select();
-$cadena = "SELECT juego.img, persona.nombre,juego.nombre AS juego,juego.precio FROM juego 
-inner JOIN item_carrito on juego.id_juego = item_carrito.juego 
-inner JOIN carrito on carrito.id_carrito = item_carrito.carrito 
-inner JOIN cliente on carrito.cliente= cliente.id_cliente 
-INNER join persona on persona.id_persona=cliente.persona WHERE persona.id_persona=5;
-";
+$cadena = "call carrito_cliente($cliente)";
 $tabla = $query->Seleccionar($cadena);
 
 
@@ -41,7 +38,11 @@ echo"<hr>";
 echo"</div></div>";
 ?>
 
+<div class="container">
+<h2 class="text-light">
 
+</h2>
+</div>
 <!-- aqui empieza el contenido del carrito -->
 
 <div class="container rounded-3 bg-white">
