@@ -25,7 +25,7 @@ $cadena = "call carrito_cliente($cliente)";
 $tabla = $query->Seleccionar($cadena);
 $cc = new Database("gravity_games", "root", "");
 $objetoPDO = $cc->getPDO();
-$cadena2 ="call subtotal_cliente($cliente);";
+$cadena2 ="call subtotal($cliente);";
 
 $result = $objetoPDO->query($cadena2);
 $row = $result->fetch(PDO::FETCH_ASSOC);
