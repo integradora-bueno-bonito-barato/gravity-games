@@ -38,13 +38,13 @@
     <?php 
 
             if(isset($_SESSION['id_cliente'])  ) { ?>
-            <a class="btn btn-outline-success" href="views/carrito.php">carrito</a>
+            <a class="btn btn-outline-success" href="views/carrito.php"><img src="assets/img/agregar-carrito.png" width="30px"></a>
             <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
             <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
 
         <?php }  elseif(isset($_SESSION['id_administrador'])  ) { ?>
 <a class="btn btn-outline-success" href="views/scripts/ver_clientes.php">Ver clientes</a>
-<a class="btn btn-outline-success" href="views/carrito.php">carrito</a>
+
 <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
 
 <p class="d-inline-block fs-5">Bienvenido admin  <?php echo $_SESSION['n_usuario'] ?></p> <img src="assets/middle/administrator.png" width="30px">

@@ -4,9 +4,9 @@ use MyApp\Data\Database;
 
     $cc = new Database("gravity_games", "root", "");
 $objetoPDO = $cc->getPDO();
-$pass = '123456';
+$pass = 'awdxzs5';
 $hash = password_hash($pass, PASSWORD_DEFAULT);
-$qry = "UPDATE persona SET contraseña2 = '$hash' WHERE n_usuario = 'clie'"; ;
+$qry = "UPDATE persona SET contraseña2 = '$hash' WHERE n_usuario = 'chiva|'"; ;
 $resultado = $objetoPDO->query($qry);
 if ($resultado) {
     echo 'ok';
