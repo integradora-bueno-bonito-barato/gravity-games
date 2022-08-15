@@ -34,12 +34,15 @@ class Login {
             exit;
         }
 
-        $qry = "SELECT * FROM administrador WHERE persona = '$row[id_persona]'";
+        $qry = "call adminpersona ($row[id_persona])";
         $resultado = $objetoPDO->query($qry);
         $row2 = $resultado->fetch(PDO::FETCH_ASSOC);
+        $qry = "select * from carrito where administrador = '$row2[id_administrador]'";
         if ($row2) {
             session_start();
             $_SESSION['id_administrador'] = $row2['id_administrador'];
+            $_SESSION['id_carrito'] = $row3['id_carrito'];
+            $_SESSION['n_usuario'] = $row2['n_usuario'];
             header('location: ../../index.php');
             exit;
         }
