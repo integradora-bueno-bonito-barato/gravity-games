@@ -1,2 +1,19 @@
 <?php
+require_once('../../vendor/autoload.php');
+use MyApp\Query\Ejecuta;
+use PDOException;
 session_start();
+extract($_POST);
+echo $juego;
+echo $carrito;
+try {
+    $execute = new Ejecuta();
+$execute->ejecutar("call eliminar_juego($juego,$carrito)");
+
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+session_start();
+$_SESSION['eliminado'] = 'Juego eliminado exitosamente del carrito';
+header ('location: ../carrito.php');

@@ -38,11 +38,22 @@ foreach($tabla as $registro)
 echo"<hr>";
   // ../assets/...etc
     echo"<div class='row'>";
+    if (isset($_SESSION['eliminado'])) {
+        echo "<div class='alert alert-success'>";
+        echo $_SESSION['eliminado'];
+        echo "</div>";
+        unset($_SESSION['eliminado']);
+    }
   echo"<div class='mb-3 col-1 d-none d-md-block'><img src='".$registro->img."' alt='' class='img-fluid'></div>
       <div class='mb-3 col-7 fs-3'>$registro->juego</div>
       <div class='mb-3 col-3 fs-3'>$registro->precio$"."</div>";
-      
+      echo "<form action='scripts/borrarjuego.php' method='POST' >";
+      echo "<input type='hidden' name='juego' value='$registro->id_juego'>";
+      echo "<input type='hidden' name='carrito' value='$registro->id_carrito'>";
+      echo "<input type='submit' class='btn btn-danger' value='Borrar'>";
+      echo "</form>";;
       echo"</div>";
+     
 }
 
 
@@ -55,6 +66,9 @@ echo"</div></div>";
 ?>
 
 <!-- aqui empieza el contenido del carrito -->
+
+  
+  
 
 
 </body>
