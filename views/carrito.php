@@ -25,7 +25,7 @@ $cadena = "call carrito_cliente($cliente)";
 $tabla = $query->Seleccionar($cadena);
 $cc = new Database("gravity_games", "root", "");
 $objetoPDO = $cc->getPDO();
-$cadena2 ="call subtotal_cliente($cliente);";
+$cadena2 ="call subtotal($cliente);";
 $result = $objetoPDO->query($cadena2);
 $row = $result->fetch(PDO::FETCH_ASSOC);
 $subtotal = $row['subtotal'];
@@ -50,7 +50,7 @@ echo"<hr>";
     echo"<div class='fs-3 col-1 offset-4 offset-md-10 '><div>Subtotal:</div><div>$subtotal</div></div>";
     echo"</div>";
 
-echo"<a class='btn btn-outline-success w-100' href='carrito2.php'>Continuar compra</a>";
+echo"<a class='btn btn-outline-success w-100' href='comprar.php'>Continuar compra</a>";
 echo"</div></div>";
 ?>
 
