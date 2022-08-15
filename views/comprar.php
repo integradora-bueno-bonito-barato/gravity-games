@@ -22,11 +22,44 @@ $resultado ="SELECT tarjetas.id_tarjetas,tarjetas.n_tarjeta,tarjetas.cvv FROM ta
 $tabla2 = $query->Seleccionar($resultado);
 $resultado2="call gravity_games.subtotal($cliente);";
 $tabla3 = $query->Seleccionar($resultado2);
+$cadena = "call juegosacomprar($cliente)";
+$row = $query->Seleccionar($cadena);
+
 
 ?>
+
+<div class="lista container rounded-3 bg-light p-3 mb-5">
+<h1>Confirma tu compra</h1>
+            <table class="table table-striped">
+                <tr>
+                    <th>Juego</th>
+                    <th>Plataforma</th>
+                    <th>Subtotal</th>
+                    <th>Iva</th>
+                    <th>Total</th>
+                </tr>
+           <?php
+           foreach($row as $registro)
+           {$subtotal = number_format($registro->subtotal, 2);
+            $iva = number_format($registro->iva, 2);
+            $total = number_format($registro->total, 2);
+            
+               echo"<tr>";
+               echo"<td>".$registro->juego."</td>";
+                echo"<td>".$registro->plataforma."</td>";
+               echo"<td>".$subtotal."</td>";
+               echo"<td>".$iva."</td>";
+               echo"<td>".$total."</td>";
+               echo"</tr>";
+           }
+           ?>
+            </table>
+        </div>
+        
 <div class="container rounded-3 bg-white">
     <div class="container text-bg-light rounded-3 mb-5 pb-3">
-        <div class="row"><h1>Confirma tu compra</h1></div> <br><br>
+        
+        <div class="row"></div> <br><br>
         <?php
         
             ?>
