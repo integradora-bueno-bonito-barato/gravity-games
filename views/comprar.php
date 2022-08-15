@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>compra</title>
 </head>
 <body class="bg-dark">
 
@@ -61,47 +61,37 @@ $row = $query->Seleccionar($cadena);
         
         <div class="row"></div> <br><br>
         <?php
-        foreach($tabla2 as $registro){
+        
             ?>
-        <div class="row">   
+        <div class="">   
             <div class="mb-3 col-2"><img src="../assets/img/tarjeta_silueta.png" alt="" class="img-fluid"></div>
-            <div class="col-3">
-            <table>
-    <tr>
-        <td class="fs-3">seleccione su tarjeta</td>
-    </tr>
-    <tr>
-        <td>
-            <select name="tarjeta" id="">
-                <?php
-                    foreach($tabla2 as $registro2)
-                    {
-                        echo"<option class='' value'".$registro2->id_tarjetas."'>".$registro2->n_tarjeta."</option>";
-                    }
-                ?>
-            </select>
-        </td>
-    </tr>
-</table>
-   
-            </div>
-            <div class="mb-3 col-4">
-            <form action="">
-                <label for="cvv" class="fs-2">Codigo de seguridad</label>
-                <input type="text" maxlength="3" name="cvv" id="">
+            <div class="">
+            
+            <!-- id cliente/carrito/id_tarjeta -->
+            <!-- <div class="mb-3 col-4"> -->
+            <form action="" method="post">
                 
+                        <label for="tarjeta" class="fs-3">Seleccione su tarjeta</label>
+                        <select name="tarjeta" id="" class="form-control">
+                            <?php
+                                foreach($tabla2 as $registro2)
+                                    {
+                                        echo"<option class='' value'".$registro2->id_tarjetas."'>".$registro2->n_tarjeta."</option>";
+                                    }
+                            ?>
+                        </select><br>
+                
+                <div class="fs-2"><label for="cvv" class="">Codigo de seguridad</label></div>
+                <input type="text" maxlength="3" name="cvv" id="" class="form-control"><br><br>
+                <button type="submit" class="btn btn-success  d-block w-100">Comprar</button><br>
             </form>
             </div>
-            <?php } ?>
-            <?php
-            foreach($tabla3 as $registro3){
-                ?>
-                <div class="col-2 fs-3"><div>Total</div><div><?php echo"$registro3->subtotal"; ?></div></div>
-        </div>
+            
+        <!-- </div> -->
         </div>
         
-        <button type="submit" class="btn btn-success  d-block w-100">Comprar</button><br>
-        <?php } ?>        
+        
+        <?php  ?>        
         
     </div>  
 
