@@ -10,7 +10,8 @@
 <?php
 use MyApp\Query\Select;
 require("../vendor/autoload.php");
-
+session_start();
+$cliente = $_SESSION['id_cliente'];
 $query = new select();
 $cadena = "SELECT tarjetas.n_tarjeta,tarjetas.cvv FROM tarjetas WHERE tarjetas.cliente=$cliente;";
 $tabla = $query->Seleccionar($cadena);

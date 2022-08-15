@@ -13,37 +13,44 @@
 
 
 <?php
+use MyApp\Data\Database;
 use MyApp\Query\Select;
 require("../vendor/autoload.php");
 session_start();
 $cliente = $_SESSION['id_cliente'];
 echo $_SESSION['id_cliente'];
 $query = new select();
+
 $cadena = "call carrito_cliente($cliente)";
 $tabla = $query->Seleccionar($cadena);
-$cadena2 ="call gravity_games.subtotal($cliente);";
-$tabla2 = $query->Seleccionar($cadena2);
-
+$cc = new Database("gravity_games", "root", "");
+$objetoPDO = $cc->getPDO();
+$cadena2 ="call subtotal_cliente($cliente);";
+$result = $objetoPDO->query($cadena2);
+$row = $result->fetch(PDO::FETCH_ASSOC);
+$subtotal = $row['subtotal'];
+$subtotal = number_format($subtotal, 2);
 echo "<div class='container rounded-3 bg-white'>
 <div class='container text-bg-light rounded-3 mb-5 pb-3'>";
-echo"<div class='text-end pt-4'><a class='btn btn-outline-success' href='../'>Volver</a></div>";
+echo"<div class='text-end pt-4'><a class='btn btn-success' href='../'>Volver</a></div>";
 foreach($tabla as $registro)
 {
 echo"<hr>";
   // ../assets/...etc
     echo"<div class='row'>";
-  echo"<div class='mb-3 col-1'><img src='".$registro->img."' alt='' class='img-fluid'></div>
+  echo"<div class='mb-3 col-1 d-none d-md-block'><img src='".$registro->img."' alt='' class='img-fluid'></div>
       <div class='mb-3 col-7 fs-3'>$registro->juego</div>
       <div class='mb-3 col-3 fs-3'>$registro->precio$"."</div>";
+      
       echo"</div>";
 }
-foreach($tabla2 as $registro2)
-{
+
+
     echo"<div class='row'>";
-    echo"<div class='fs-3 col-1 offset-10'><div>Subtotal:</div><div>$registro2->subtotal</div></div>";
+    echo"<div class='fs-3 col-1 offset-4 offset-md-10 '><div>Subtotal:</div><div>$subtotal</div></div>";
     echo"</div>";
-}
-echo"<a class='btn btn-outline-success' href='comprar.php'>Continuar compra</a>";
+
+echo"<a class='btn btn-outline-success w-100' href='carrito2.php'>Continuar compra</a>";
 echo"</div></div>";
 ?>
 

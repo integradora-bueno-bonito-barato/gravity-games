@@ -74,6 +74,7 @@ foreach($result as $filas){?>
         </div>
         <p>Plataforma: </p>
         <p><?php echo $filas->plataforma?></p>
+        <input type="hidden" name="juego" value="<?php echo $filas->id_juego;?>">
         <button type="submit" class="btn btn-success mt-md-2 d-block mt-auto">Agregar al carrito</button>
     </div>
 </form>

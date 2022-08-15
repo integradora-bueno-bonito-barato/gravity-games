@@ -2,7 +2,7 @@
 
 use MyApp\Query\Registrar;
 require_once('../../vendor/autoload.php');
-require('../../src/query/registro.php');
+require_once('../../src/query/registro.php');
 
 $insert = new Registrar();
 extract($_POST);

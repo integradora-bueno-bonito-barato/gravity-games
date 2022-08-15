@@ -36,17 +36,34 @@ class Registrar {
         header('location: ../registro.php');
         exit;
         }
-        $hash = password_hash($pass, PASSWORD_DEFAULT);
-        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
+        
+        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
         if($row){
             session_start();
-            $_SESSION['error_contraseña'] = "El usuario o email ya esta en uso";
+            $_SESSION['error_contraseña'] = "El usuario ya esta en uso";
             header('location: ../registro.php');
             exit;
         }
-        $qry = "call crearcliente('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
+        $qry = "SELECT * FROM persona WHERE correo = '$email'";
+        $resultado = $objetoPDO->query($qry);
+        $row = $resultado->fetch(PDO::FETCH_ASSOC);
+        if($row){
+            session_start();
+            $_SESSION['error_contraseña'] = "El email ya esta en uso";
+            header('location: ../registro.php');
+            exit;
+        }
+        $hash = password_hash($pass, PASSWORD_DEFAULT);
+        if (password_verify($pass, $hash)) {
+            echo 'ok';
+
+        }
+        else {
+            echo 'no';
+        }
+        $qry = "insert into persona (nombre, apellido, n_usuario, correo, contraseña2) values ('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
         $objetoPDO->query($qry);
 
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
