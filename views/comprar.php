@@ -69,7 +69,8 @@ $row = $query->Seleccionar($cadena);
             
             <!-- id cliente/carrito/id_tarjeta -->
             <!-- <div class="mb-3 col-4"> -->
-            <form action="" method="post">
+            <?php if($tabla2){?>
+                <form action="" method="post">
                 
                         <label for="tarjeta" class="fs-3">Seleccione su tarjeta</label>
                         <select name="tarjeta" id="" class="form-control">
@@ -85,6 +86,7 @@ $row = $query->Seleccionar($cadena);
                 <input type="text" maxlength="3" name="cvv" id="" class="form-control"><br><br>
                 <button type="submit" class="btn btn-success  d-block w-100">Comprar</button><br>
             </form>
+            <?php } ?>
             </div>
             
         <!-- </div> -->
