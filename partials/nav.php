@@ -28,7 +28,7 @@
     </div>
     <div class="col-auto">
    
-      <button type="submit" class="btn btn-primary mb-2">Buscar</button>
+      <button type="submit" class="btn btn-success mb-2">Buscar</button>
     </div>
                   </form>
                   <div class="session ms-auto mt-2 mt-md-0">
@@ -39,10 +39,17 @@
 
             if(isset($_SESSION['id_cliente'])  ) { ?>
             <a class="btn btn-outline-success" href="views/carrito.php">carrito</a>
-        <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
-        <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
+            <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
+            <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
 
-        <?php } else { ?> 
+        <?php }  elseif(isset($_SESSION['id_administrador'])  ) { ?>
+<a class="btn btn-outline-success" href="views/scripts/ver_clientes.php">Ver clientes</a>
+<a class="btn btn-outline-success" href="views/carrito.php">carrito</a>
+<a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
+
+<p class="d-inline-block fs-5">Bienvenido admin  <?php echo $_SESSION['n_usuario'] ?></p> <img src="assets/middle/administrator.png" width="30px">
+
+<?php }   else { ?> 
   <button type="button" class="btn my-1 btn-outline-success" data-bs-toggle="modal" data-bs-target="#login">
             Login
           </button>
