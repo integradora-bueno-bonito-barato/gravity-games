@@ -4,6 +4,7 @@ $usuario= "root";
 $password = "";
 $nombreBD= "gravity_games";
 $db = new mysqli($servidor, $usuario, $password, $nombreBD);
+use PDO;
 var_dump(defined(PDO::MYSQL_ATTR_LOCAL_INFILE));
 
 if (isset($db)) {
