@@ -30,3 +30,8 @@ class Database {
         $objetoPDO = null;
     }
 }
+
+new Database("gravity_games", "root", "");
+$objetoPDO = $cc->getPDO();
+
+
