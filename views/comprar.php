@@ -59,18 +59,18 @@ $row = $query->Seleccionar($cadena);
 <div class="container rounded-3 bg-white">
     <div class="container text-bg-light rounded-3 mb-5 pb-3">
         
-        <div class="row"></div> <br><br>
+         <br><br>
         <?php
         
             ?>
-        <div class="">   
-            <div class="mb-3 col-2"><img src="../assets/img/tarjeta_silueta.png" alt="" class="img-fluid"></div>
-            <div class="">
+        <div class="row">   
+            <div class="mb-3 col-3"><img src="../assets/img/tarjeta_visa.png" alt="" class="img-fluid"></div>
+            <div class="mb-3 col-5 pt-3"><a class="btn btn-success  d-block w-100" href="agregartarjeta.php">Agregar tarjeta</a></div>
             
             <!-- id cliente/carrito/id_tarjeta -->
             <!-- <div class="mb-3 col-4"> -->
             <?php if($tabla2){?>
-                <form action="" method="post">
+                <form action="scripts/guardacompra.php" method="post">
                 
                         <label for="tarjeta" class="fs-3">Seleccione su tarjeta</label>
                         <select name="tarjeta" id="" class="form-control">
@@ -87,7 +87,7 @@ $row = $query->Seleccionar($cadena);
                 <button type="submit" class="btn btn-success  d-block w-100">Comprar</button><br>
             </form>
             <?php } ?>
-            </div>
+            
             
         <!-- </div> -->
         </div>
