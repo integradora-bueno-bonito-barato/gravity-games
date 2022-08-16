@@ -24,7 +24,7 @@ $resultado2="call gravity_games.subtotal($cliente);";
 $tabla3 = $query->Seleccionar($resultado2);
 $cadena = "call juegosacomprar($cliente)";
 $row = $query->Seleccionar($cadena);
-
+var_dump($row)
 
 ?>
 

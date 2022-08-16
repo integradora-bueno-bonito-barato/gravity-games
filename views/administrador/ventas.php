@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver clientes</title>
+    <title>Ver Ventas</title>
     <link rel="stylesheet" href="../../css 2.0/bootstrap.min.css">
 </head>
 <body>
         <div class="container">
-        <a class="btn btn-primary" href="../administrador/paginaprincipal.php">Regresar</a> 
-            <h1 align="center">Clientes</h1>
+        <a class="btn btn-primary" href="paginaprincipal.php">Regresar</a> 
+   
+            <h1 align="center">Orden de Venta</h1>
             <?php
 
 
@@ -18,13 +19,13 @@ use MyApp\query\select;
         require("../../vendor/autoload.php");
         
         $query = new select();
-        $cadena =  "SELECT * FROM persona";
+        $cadena =  "SELECT * FROM orden_venta";
         $tabla = $query->Seleccionar($cadena);
         
         echo "<table class='table table-striped'>
         <head class='table-dark'>
         <tr>
-        <th>id_persona</th><th>Nombre</th><th>Apellido</th><th>nombre de usuario</th><th>Correo</th><th>Telefono</th>
+        <th>id_orden_venta</th><th>Carrito</th><th>Fecha</th><th>Tarjeta</th>
         </tr>
         </head>
         <tbody>";
@@ -32,12 +33,10 @@ use MyApp\query\select;
         foreach($tabla as $registro)
         {
             echo "<tr>";
-            echo "<td> $registro->id_persona </td>";
-            echo "<td> $registro->nombre </td>";
-            echo "<td> $registro->apellido </td>";
-            echo "<td> $registro->n_usuario </td>";
-            echo "<td> $registro->correo </td>";
-            echo "<td> $registro->telefono </td>";
+            echo "<td> $registro->id_orden_venta </td>";
+            echo "<td> $registro->carrito </td>";
+            echo "<td> $registro->fecha </td>";
+            echo "<td> $registro->tarjeta </td>";
             echo "</tr>";
         }
         
