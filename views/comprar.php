@@ -24,6 +24,7 @@ $resultado2="call gravity_games.subtotal($cliente);";
 $tabla3 = $query->Seleccionar($resultado2);
 $cadena = "call juegosacomprar($cliente)";
 $row = $query->Seleccionar($cadena);
+
 $resultado5 = "SELECT carrito.id_carrito from carrito inner join cliente on cliente.id_cliente = carrito.cliente where cliente.id_cliente = $cliente";
 $tabla10 = $query->Seleccionar($resultado5);
 $n = 0;
