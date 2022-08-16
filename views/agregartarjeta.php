@@ -21,7 +21,7 @@
                     <label for="usuario">Codigo de segurdidad (cvv)</label>
                     <input required maxlength="3" type="text" name="cvv" id="usuario" placeholder="Escribe tu codigo de seguridad" class="form-control">
                     
-                    <input type="submit" value="guardar">
+                    <input class="btn btn-info text-dark fs-5 mt-2 w-100" type="submit" value="Guardar">
         </form>
         </form>
     </div>

@@ -1,10 +1,19 @@
 <?php
 require('../../vendor/autoload.php');
 use MyApp\Query\Ejecuta;
-
+use MyApp\Query\Select;
 
 extract($_POST);
 echo $juego;
+$select = new Select();
+$query = "call juego_disponible($juego)";
+$result = $select->seleccionar($query);
+if($result == null) {
+    session_start();
+    $_SESSION['error_contraseña'] = "No hay stock disponible";
+    header('location: ../../index.php');
+    exit;
+}
 session_start();
 $persona = $_SESSION['n_usuario'];
 if(!isset($persona)){
