@@ -4,14 +4,12 @@ $usuario= "root";
 $password = "";
 $nombreBD= "gravity_games";
 $db = new mysqli($servidor, $usuario, $password, $nombreBD);
-use PDO;
-var_dump(defined(PDO::MYSQL_ATTR_LOCAL_INFILE));
 
-if (isset($db)) {
-    echo "Conexión exitosa";
-} else {
-    echo "Error en la conexión";
-}
+// if (isset($db)) {
+//     echo "Conexión exitosa";
+// } else {
+//     echo "Error en la conexión";
+// }
 if ($db->connect_error) {
     die("la conexión ha fallado: " . $db->connect_error);
 }

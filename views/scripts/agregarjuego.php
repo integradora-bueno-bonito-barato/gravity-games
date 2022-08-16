@@ -7,6 +7,11 @@ extract($_POST);
 echo $juego;
 session_start();
 $persona = $_SESSION['n_usuario'];
+if(!isset($persona)){
+    $_SESSION["error_contraseña"] = "Debes iniciar sesión para poder comprar";
+    header("Location: ../../index.php");
+    exit;
+}
 $carrito = $_SESSION['id_carrito'];
 echo '<br>';
 echo $carrito;

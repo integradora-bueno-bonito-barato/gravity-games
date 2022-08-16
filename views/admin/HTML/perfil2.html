@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../perfil.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+</head>
+<body>
+    <section class="perfil-usuario">
+        <div class="contenedor-perfil">
+            <div class="portada-perfil" style="background-image: url('../HTML/juego.jpg');">
+                <div class="sombra"></div>
+                <div class="avatar-perfil">
+                    <img src="../zo89_mQw_400x400.jpg" alt="img">
+                </div>
+                <div class="datos-perfil">
+                    <h4 class="titulo-usuario">Jennie Maria Manoban Hernandez</h4>
+                    <p class="bio-usuario">Administradora de Gravity Games</p>
+                    <ul class="lista-perfil">
+                     <p>0 Publicaciones</p>
+                    </ul>
+                </div>
+                <div class="opcciones-perfil">
+                    
+                    <a  class="boton" href="../paginaprincipal.html">Regresar</a>
+                    <button type="button" class=" btn btn-outline-success btn-lg" id="administrador" data-bs-toggle="modal" data-bs-target="#myModal">Empleados</button>
+                     <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Iniciar seccion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <label class="form-label" for="Nombre" >Nombre</label>
+            <input class="form-control" type="text" name="Nombre" placeholder="Escribe tu nombre.." >
+            <label class="form-label" for="apaterno" >Apaterno</label>
+            <input class="form-control" type="text" name="apaterno" placeholder="Escribe tu apaterno.." >
+            <label class="form-label" for="amaterno" >Materno</label>
+            <input class="form-control" type="text" name="amaterno" placeholder="Escribe tu amaterno.." ><br>
+  
+            <label class="form-label" for="sex" >Sexo</label>
+            <select class="form-select" name="sex">
+            <option value="m">Masculino</option>
+            <option value="f">Femenino</option>
+            </select><br>
+  
+            
+            <label class="form-label" for="edad" >Edad</label>
+            <input class="form-control" type="text" name="edad" placeholder="Escribe tu edad.." >
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                </div>
+                
+               
+            </div>
+            <div class="menu-perfil">
+                <ul>
+                   <center><p>Informacion</p></center>
+                    
+                </ul>
+            </div>
+            <table class="table"> 
+                <thead> 
+                    <tr> 
+                        <th>Nombre</th> 
+                        <th>Apellido</th> 
+                        <th>Correo</th> 
+                        <th>Telefono</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                 <tr> 
+                        <td>Raquel</td> 
+                        <td>Perales Arguelles</td> 
+                        <td>Raquel@gmail.com</td> 
+                        <td>8717958145</td> 
+                 </tr>
+                </tbody> 
+            </table>
+           
+        </div>
+    </section>
+    <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

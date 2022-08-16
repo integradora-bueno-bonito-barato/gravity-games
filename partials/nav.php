@@ -86,12 +86,13 @@
                   }
                  
                  $result = $db->query($query);
-                 echo "<br>Has buscado la palabra clave:<b> ". $_POST['PalabraClave']."</b>";
+                 echo '<div class="container bg-light p-0">';
+                 
                                  
                  if(mysqli_num_rows($result) > 0) {
                     $row_count=0;
-                    echo "<br><br>Resultados encontrados: ";
-                    echo "<br><table class='table table-striped'>";
+                    
+                    echo "<table class='table table-striped'>";
                     echo "<tr>";
                         echo "<th></th><th>NOMBRE</th><th>PRECIO</th><th></th>";
                         echo "</tr>";
@@ -102,7 +103,12 @@
                         echo "<td>". $row['nombre'] ."</td>";
                         echo "<td>$". $row['precio'] ."</td>";
                         ?>
-                        <td> <a href="elden-ring.php" class="btn btn-success d-block">Añadir al carrito</a> </td></tr>
+                          <form action="views/scripts/agregarjuego.php" method="post">
+                            <input type="hidden" name="id_juego" value="<?php echo $row['id_juego'] ?>">
+
+                          <td> <button type="submit"  class="btn btn-success d-block">Añadir al carrito</button> </td></tr>
+                          </form>
+                        
                         <?php
 
 
@@ -114,6 +120,7 @@
                     echo "<br>Resultados encontrados: Ninguno";
                 
                 }
+                echo "</div>";
             }
             //AQUI TERMINA EL CODIGO PHP DEL BUSCADOR
             ?>

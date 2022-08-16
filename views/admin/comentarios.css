@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .container2 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+   
+  }
+  
+  .textbox{
+    background-color:purple;
+    color: black;
+    padding: 2rem;
+    position: relative;
+    min-width: 300px;
+    
+   
+  }
+  .textbox.textbox2 {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    margin-top: -15px;
+    left: -30px;
+    border: solid 15px transparent;
+    border-right-color: violet;
+    z-index: 1;
+  }
+  .textbox--border {
+    position: absolute;
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    top: -6px;
+    left: 6px;
+    z-index: 1;
+  }
+  .textbox--border:after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    height: 20px;
+    width: 20px;
+    left: -12px;
+    border: 2px solid transparent;
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blue;
+    transform: rotate(-45deg);
+    background-color:crimson;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .imagen{
+    width:65%;
+    height: 98vh;
+    border-radius: 0.5em;
+    position:relative;
+    left: 470px;
+    bottom: 615px;
+   margin: auto;
+  }
+  h1{
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 4ex;
+    color: purple;
+    text-shadow: 3px 1px violet;
+    text-transform: uppercase;
+    letter-spacing: 1.5em;
+  }
+  .boton{
+    background-color:purple; 
+    border: none;
+    color:black;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius:1.5em;
+  }
+ 
