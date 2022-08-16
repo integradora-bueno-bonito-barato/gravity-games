@@ -41,10 +41,11 @@
       <button type="submit" class="btn btn-success mb-2">Buscar</button>
     </div>
                   </form>
+                  
                   <div class="session ms-auto mt-2 mt-md-0">
   <?php include('partials/modals.php'); ?>
   <div class="sesiones">
-    
+  <a href="views/misclaves.php" class="btn btn-info ms-2">Mis claves</a>
     <?php 
 
             if(isset($_SESSION['id_cliente'])  ) { ?>
