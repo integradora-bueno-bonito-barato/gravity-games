@@ -9,7 +9,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="bg-dark p-md-3">
+  <div class="bg-dark py-5 vh-100">
 <div class="container rounded-3 bg-white">
 
 <h1 align="center">Store</h1>
@@ -27,6 +27,9 @@ $reg = $db->Seleccionar($cadena);
 echo "<div>
 <label class= 'control-label'>Genero</label>
 <select name='genero' class='form-select'>";
+
+
+
 
 foreach($reg as $value)
 {

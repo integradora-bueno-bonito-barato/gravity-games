@@ -8,7 +8,7 @@ class Login {
         
         $cc = new Database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
-        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario'";
+        $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$usuario'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
         

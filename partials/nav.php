@@ -45,10 +45,11 @@
                   <div class="session ms-auto mt-2 mt-md-0">
   <?php include('partials/modals.php'); ?>
   <div class="sesiones">
-  <a href="views/misclaves.php" class="btn btn-info ms-2">Mis claves</a>
+ 
     <?php 
 
             if(isset($_SESSION['id_cliente'])  ) { ?>
+             <a href="views/misclaves.php" class="btn btn-info ms-2">Mis claves</a>
             <a class="btn btn-outline-success" href="views/carrito.php"><img src="assets/img/agregar-carrito.png" width="30px"></a>
             <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
             <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
