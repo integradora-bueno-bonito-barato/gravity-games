@@ -17,43 +17,12 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="bg-dark p-md-3">
+
 <div class="container rounded-3 bg-white">
     <header class="vh-75 container d-none d-md-block">
-    <div class="container">
-    <div class="row">
-        <div class="p-3 mt-5 d-none d-md-block col-md-4 bg-light rounded-3">
-            <h2>Filtros</h2>
-            <div class="form-group">
-                <label for="">Plataforma</label>
-                <select class="form-control " id="">
-                    <option value="todas">Todas</option>
-                    <option value="#">Steam</option>
-                    <option value="#">Playstation 4</option>
-                    <option value="#">Playstation 5</option>
-                    <option value="#">Xbox one</option>
-                    <option value="#">Xbox Series X</option>
-                </select>
-            </div> <br>
+   
 
-            <div class="form-group">
-                <label for="">Genero</label>
-                <select class="form-control " id="">
-                    <option value="todas">Todas</option>
-                    <option value="#">Aventura</option>
-                    <option value="#">Terror</option>
-                    <option value="#">Arcade</option>
-                    <option value="#">Simulador</option>
-                    <option value="#">Estrategia</option>
-                </select>
-            </div> <br>
-        
-
-        </div>
-        
-        <div class="col-12 col-md-8">
-            <h1 class="text-center text-md-start">Store</h1>
-            <div class="contenedor-tarjeta d-md-flex justify-content-evenly flex-wrap ">
+           
 
             <?php
 
