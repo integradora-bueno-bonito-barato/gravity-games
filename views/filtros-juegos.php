@@ -54,7 +54,7 @@ if($_POST)
 
   $cadena = "SELECT juego.img, juego.nombre, juego.precio, juego.plataforma, juego.id_juego FROM juego, genero where juego.genero = $genero";
  $result = $consulta->Seleccionar($cadena);
-
+if($result){
  foreach($result as $filas)?>
    
    <form method="POST" action="scripts/agregarjuego.php"  class="tarjeta my-2 mx-auto mx-md-0 bg-dark d-flex align-items-md-center justify-items-center flex-md-column p-3  text-light rounded-3" style="--bs-bg-opacity: .9;">
@@ -70,7 +70,7 @@ if($_POST)
         <button type="submit" class="btn btn-success mt-md-2 d-block mt-auto">Agregar al carrito</button>
         </div>
         </form>
-        <?php };?> 
+        <?php };}?> 
  
       </div>
 
