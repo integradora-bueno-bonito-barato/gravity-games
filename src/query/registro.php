@@ -78,9 +78,11 @@ class Registrar {
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
         $qry= "call crearcarrito('$row[id_cliente]')";
         $resultado = $objetoPDO->query($qry);
-        session_start();
-        $_SESSION['n_usuario'] = $n_usuario;
-        $_SESSION['id_cliente'] = $usuario;
+        $qry = "select * from carrito where cliente = '$row[id_cliente]'";
+        $resultado = $objetoPDO->query($qry);
+        $row = $resultado->fetch(PDO::FETCH_ASSOC);
+    
+       
         $cc->desconectarDB();
         header('location: ../../index.php');
     }

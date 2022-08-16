@@ -18,13 +18,13 @@ use MyApp\query\select;
         require("../../vendor/autoload.php");
         
         $query = new select();
-        $cadena =  "SELECT * FROM persona";
+        $cadena =  "SELECT * FROM persona,cliente where persona.id_persona = cliente.persona order by fecha_creacion desc";
         $tabla = $query->Seleccionar($cadena);
         
         echo "<table class='table table-striped'>
         <head class='table-dark'>
         <tr>
-        <th>id_persona</th><th>Nombre</th><th>Apellido</th><th>nombre de usuario</th><th>Correo</th><th>Telefono</th>
+        <th>id_persona</th><th>Nombre</th><th>Apellido</th><th>nombre de usuario</th><th>Correo</th><th>Telefono</th><th>fecha de creacion</th>
         </tr>
         </head>
         <tbody>";
@@ -38,6 +38,7 @@ use MyApp\query\select;
             echo "<td> $registro->n_usuario </td>";
             echo "<td> $registro->correo </td>";
             echo "<td> $registro->telefono </td>";
+            echo "<td> $registro->fecha_creacion</td>";
             echo "</tr>";
         }
         

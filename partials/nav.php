@@ -14,6 +14,16 @@
                         unset($_SESSION['error_contraseña']);
                     } ;
                     ?>
+                    <?php
+                    if(isset($_SESSION['compra'])) {
+                      echo '<div class="alert alert-success text-center">'.$_SESSION['compra'].'</div>';
+                      unset($_SESSION['compra']);
+                  } ;?>
+                   <?php
+                    if(isset($_SESSION['agregado'])) {
+                      echo '<div class="alert alert-success text-center">'.$_SESSION['agregado'].'</div>';
+                      unset($_SESSION['agregado']);
+                  } ;?>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,19 +41,22 @@
       <button type="submit" class="btn btn-success mb-2">Buscar</button>
     </div>
                   </form>
+                  
                   <div class="session ms-auto mt-2 mt-md-0">
   <?php include('partials/modals.php'); ?>
   <div class="sesiones">
-    
+  <a href="views/misclaves.php" class="btn btn-info ms-2">Mis claves</a>
     <?php 
 
             if(isset($_SESSION['id_cliente'])  ) { ?>
-            <a class="btn btn-outline-success" href="views/carrito.php">carrito</a>
+            <a class="btn btn-outline-success" href="views/carrito.php"><img src="assets/img/agregar-carrito.png" width="30px"></a>
             <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
             <p class="d-inline-block fs-5">Bienvenido <?php echo $_SESSION['n_usuario'] ?></p>
 
         <?php }  elseif(isset($_SESSION['id_administrador'])  ) { ?>
+
           <a class="btn btn-outline-success" href="views/administrador/paginaprincipal.php">Panel admin</a>
+
 
 <a class="btn btn-outline-success" href="views/scripts/logout.php">Logout</a>
 
@@ -86,12 +99,13 @@
                   }
                  
                  $result = $db->query($query);
-                 echo "<br>Has buscado la palabra clave:<b> ". $_POST['PalabraClave']."</b>";
+                 echo '<div class="container bg-light p-0">';
+                 
                                  
                  if(mysqli_num_rows($result) > 0) {
                     $row_count=0;
-                    echo "<br><br>Resultados encontrados: ";
-                    echo "<br><table class='table table-striped'>";
+                    
+                    echo "<table class='table table-striped'>";
                     echo "<tr>";
                         echo "<th></th><th>NOMBRE</th><th>PRECIO</th><th></th>";
                         echo "</tr>";
@@ -102,7 +116,12 @@
                         echo "<td>". $row['nombre'] ."</td>";
                         echo "<td>$". $row['precio'] ."</td>";
                         ?>
-                        <td> <a href="elden-ring.php" class="btn btn-success d-block">Añadir al carrito</a> </td></tr>
+                          <form action="views/scripts/agregarjuego.php" method="post">
+                            <input type="hidden" name="id_juego" value="<?php echo $row['id_juego'] ?>">
+
+                          <td> <button type="submit"  class="btn btn-success d-block">Añadir al carrito</button> </td></tr>
+                          </form>
+                        
                         <?php
 
 
@@ -114,6 +133,7 @@
                     echo "<br>Resultados encontrados: Ninguno";
                 
                 }
+                echo "</div>";
             }
             //AQUI TERMINA EL CODIGO PHP DEL BUSCADOR
             ?>

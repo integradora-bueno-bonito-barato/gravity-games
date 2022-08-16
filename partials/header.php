@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gravity games</title>
 </head>
-<body>
+<body class="bg-dark">
 <!-- maqueta -->
 <?php include('partials/nav.php')?> 
 <div class="bg-dark p-md-3">
