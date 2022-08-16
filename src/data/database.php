@@ -1,9 +1,9 @@
 <?php
-namespace MyApp\Data;
+namespace myapp\data;
 use PDO;
 use PDOException;
 
-class Database {
+class database {
     public $objetoPDO = null;
     public $user = "";
     public $password = "";

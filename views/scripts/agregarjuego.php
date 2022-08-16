@@ -1,11 +1,11 @@
 <?php
 require('../../vendor/autoload.php');
-use MyApp\Query\Ejecuta;
-use MyApp\Query\Select;
+use myapp\query\ejecuta;
+use myapp\query\select;
 
 extract($_POST);
 echo $juego;
-$select = new Select();
+$select = new select();
 $query = "call juego_disponible($juego)";
 $result = $select->seleccionar($query);
 if($result == null) {
@@ -27,7 +27,7 @@ echo $carrito;
 echo '<br>';
 echo $persona;
 
-$insert = new Ejecuta();
+$insert = new ejecuta();
 $sql = "insert into item_carrito (carrito, juego) values ($carrito, $juego);";
 $insert->ejecutar($sql);
 session_start();

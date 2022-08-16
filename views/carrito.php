@@ -13,8 +13,8 @@
 
 
 <?php
-use MyApp\Data\Database;
-use MyApp\Query\Select;
+use myapp\data\database;
+use myapp\query\select;
 require("../vendor/autoload.php");
 session_start();
 $cliente = $_SESSION['id_cliente'];
@@ -23,7 +23,7 @@ $query = new select();
 
 $cadena = "call carrito_cliente($cliente)";
 $tabla = $query->Seleccionar($cadena);
-$cc = new Database("gravity_games", "root", "");
+$cc = new database("gravity_games", "root", "");
 $objetoPDO = $cc->getPDO();
 
 $cadena2 ="call subtotal($cliente);";

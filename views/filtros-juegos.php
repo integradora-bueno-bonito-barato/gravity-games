@@ -17,7 +17,7 @@
         <div class="contenedor-tarjeta d-md-flex justify-content-evenly flex-wrap ">
 <form action="" method="post">
 <?php
-use MyApp\query\Select;
+use myapp\query\select;
 
 require_once("../vendor/autoload.php");
 

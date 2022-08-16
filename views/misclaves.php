@@ -17,14 +17,14 @@
         <?php
         session_start();
         $cliente = $_SESSION['id_cliente'];
-use MyApp\Query\Select;
+use myapp\query\select;
         if (!isset($cliente)) {
             header("Location: ../index.php");
             exit;
         }
         
         require_once("../vendor/autoload.php");
-        $query = new Select();
+        $query = new select();
         $cadena = "select juego.nombre as juego, plataforma, img, 
         clave.clave from juego join clave on clave.juego = juego.id_juego 
         join claves_vendidas on claves_vendidas.clave = clave.id_clave 

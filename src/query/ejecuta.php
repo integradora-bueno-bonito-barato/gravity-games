@@ -1,13 +1,13 @@
 <?php
 
-namespace MyApp\Query;
-use MyApp\Data\Database;
+namespace myapp\query;
+use myapp\data\database;
 use PDOException;
 
 class Ejecuta {
     public function ejecutar($qry){
         try {
-            $cc = new Database("gravity_games", "root", "");
+            $cc = new database("gravity_games", "root", "");
             $objetoPDO = $cc->getPDO();
             $objetoPDO->query($qry);
             $cc->desconectarDB();

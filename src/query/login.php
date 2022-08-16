@@ -1,12 +1,12 @@
 <?php
-namespace MyApp\Query;
-use MyApp\Data\Database;
+namespace myapp\query;
+use myapp\data\database;
 use PDO;
 
-class Login {
+class login {
     public function verificarusuario($usuario, $pass){
         
-        $cc = new Database("gravity_games", "root", "");
+        $cc = new database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$usuario'";
         $resultado = $objetoPDO->query($qry);

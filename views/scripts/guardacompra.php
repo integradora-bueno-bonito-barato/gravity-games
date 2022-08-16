@@ -1,7 +1,7 @@
 <?php
 
-use MyApp\Data\Database;
-use MyApp\Query\Select;
+use myapp\data\database;
+use myapp\query\select;
 
         require("../../vendor/autoload.php");
         session_start();
@@ -11,7 +11,7 @@ use MyApp\Query\Select;
    
         echo "$tarjeta"; 
         echo "$cliente";
-        $cc = new Database("gravity_games", "root", "");
+        $cc = new database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
         $query = "select * from cliente join carrito on cliente.id_cliente = carrito.cliente join tarjetas on tarjetas.cliente = cliente.id_cliente where cliente.id_cliente = $cliente";
         $result = $objetoPDO->query($query);
@@ -39,7 +39,7 @@ use MyApp\Query\Select;
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $orden = $row['id_orden_venta'];
         echo "$orden";
-        $seleccionar = new Select();
+        $seleccionar = new select();
         $query = "call claves_listas($carrito)";
         $result = $seleccionar->seleccionar($query);
         foreach($result as $row){
