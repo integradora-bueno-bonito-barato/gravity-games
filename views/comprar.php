@@ -11,7 +11,7 @@
 <body class="bg-dark">
 
 <?php
-use MyApp\Query\Select;
+use myapp\query\select;
 require("../vendor/autoload.php");
 session_start();
 $cliente = $_SESSION['id_cliente'];
@@ -90,12 +90,13 @@ $n = 0;
                                     {  $n++;?>
                                         
                                         <option value="<?php echo $registro2->id_tarjetas;?>"><?php echo "$n - " . $registro2->n_tarjeta;?></option>
-                                    <?php } ?>
+                                    
+                                        <?php } ?>
                             ?>
                         </select><br>
                 
                 <div class="fs-2"><label for="cvv" class="">Codigo de seguridad</label></div>
-                <input type="text" maxlength="3" name="cvv" id="" class="form-control"><br><br>
+                <input type="text" maxlength="3" name="cvv" id="" required class="form-control"><br><br>
                 <button type="submit" class="btn btn-success  d-block w-100">Comprar</button><br>
                 
             </form>

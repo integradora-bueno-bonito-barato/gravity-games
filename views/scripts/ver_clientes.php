@@ -14,7 +14,7 @@
             <?php
 
 
-use MyApp\query\select;
+use myapp\query\select;
         require("../../vendor/autoload.php");
         
         $query = new select();

@@ -1,8 +1,8 @@
 <?php
 require('../../vendor/autoload.php');
-use MyApp\Query\Login;
+use myapp\query\login;
 
 extract($_POST);
-$login = new Login();
+$login = new login();
 
 $login->verificarusuario($user, $password);

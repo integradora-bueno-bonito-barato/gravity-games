@@ -1,13 +1,13 @@
 <?php
 require_once('../../vendor/autoload.php');
-use MyApp\Query\Ejecuta;
+use myapp\query\ejecuta;
 use PDOException;
 session_start();
 extract($_POST);
 echo $juego;
 echo $carrito;
 try {
-    $execute = new Ejecuta();
+    $execute = new ejecuta();
 $execute->ejecutar("call eliminar_juego($juego,$carrito)");
 
 } catch (PDOException $e) {

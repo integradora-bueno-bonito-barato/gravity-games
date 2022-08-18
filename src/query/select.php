@@ -1,12 +1,12 @@
 <?php
-namespace MyApp\Query;
+namespace myapp\query;
 use PDO;
 use PDOException;
-use MyApp\Data\Database;
+use myapp\data\database;
 
 
 
-class Select {
+class select {
     public function Seleccionar($qry){
         try{
             $cc = new Database("gravity_games", "root", "");

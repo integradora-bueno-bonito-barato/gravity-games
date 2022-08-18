@@ -9,7 +9,7 @@
 <body>
 <?php
    
-   use MyApp\Query\Select;
+   use myapp\query\select;
    require("../vendor/autoload.php");
    session_start();
    $cliente = $_SESSION['id_cliente'];

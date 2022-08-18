@@ -1,13 +1,13 @@
 <?php
 
-namespace MyApp\Query;
-use MyApp\Data\Database;
+namespace myapp\query;
+use myapp\data\database;
 use PDOException;
 use PDO;
-class Registrar {
+class registrar {
     public function registrar($qry){
         try {
-            $cc = new Database("gravity_games", "root", "");
+            $cc = new database("gravity_games", "root", "");
             $objetoPDO = $cc->getPDO();
             $objetoPDO->query($qry);
             $cc->desconectarDB();
@@ -22,7 +22,7 @@ class Registrar {
 
     public function crearcliente($nombre, $apellidos, $usuario, $email, $pass, $pass2){
        
-        $cc = new Database("gravity_games", "root", "");
+        $cc = new database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
         if (strlen($pass) < 6 ) {
             session_start();

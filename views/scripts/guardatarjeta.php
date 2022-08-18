@@ -1,11 +1,11 @@
 
         <?php
-        use MyApp\Query\Ejecuta;
+        use myapp\query\ejecuta;
         require("../../vendor/autoload.php");
         session_start();
         $cliente = $_SESSION['id_cliente'];
         
-        $insert = new Ejecuta();
+        $insert = new ejecuta();
         extract($_POST);
         $cadena = "INSERT INTO tarjetas (n_tarjeta,exp,cvv,cliente) VALUES ('$n_tarjeta','$exp','$cvv',$cliente)";
         $insert->ejecutar($cadena);

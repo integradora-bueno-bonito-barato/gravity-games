@@ -1,8 +1,8 @@
 <?php 
 require_once('../vendor/autoload.php');
-use MyApp\Data\Database;
+use myapp\data\database;
 
-    $cc = new Database("gravity_games", "root", "");
+    $cc = new database("gravity_games", "root", "");
 $objetoPDO = $cc->getPDO();
 $pass = 'awdxzs5';
 $hash = password_hash($pass, PASSWORD_DEFAULT);
