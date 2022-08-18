@@ -12,7 +12,7 @@ class login {
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
         
         
-        $hash =  $row['contraseña2'];
+        $hash =  $row['contrasena2'];
         
         if($row) {
          if(password_verify($pass, $hash)){

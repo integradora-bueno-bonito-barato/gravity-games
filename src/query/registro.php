@@ -69,7 +69,7 @@ class registrar {
         echo $usuario;
         echo $email;
         echo $hash;
-        $qry = "insert into persona (nombre, apellido, n_usuario, correo, contraseña2) values ('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
+        $qry = "insert into persona (nombre, apellido, n_usuario, correo, contrasena2) values ('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
         $objetoPDO->query($qry);
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
         $resultado = $objetoPDO->query($qry);
