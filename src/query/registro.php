@@ -3,7 +3,9 @@ namespace myapp\query;
 use myapp\data\database;
 use PDOException;
 use PDO;
+header('Content-Type: text/html; charset=UTF-8');
 class registrar {
+    
     public function registrar($qry){
         try {
             $cc = new database("gravity_games", "root", "");
@@ -62,6 +64,11 @@ class registrar {
         else {
             echo 'no';
         }
+        echo $nombre;
+        echo $apellidos;
+        echo $usuario;
+        echo $email;
+        echo $hash;
         $qry = "insert into persona (nombre, apellido, n_usuario, correo, contraseña2) values ('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
         $objetoPDO->query($qry);
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
