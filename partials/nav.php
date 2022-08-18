@@ -5,6 +5,7 @@
       <p class="m-0">Gravity games</p>
       </a>
       <?php
+      
            if(isset($_SESSION['error_usuario'])) {
             echo '<div class="alert alert-danger text-center">'.$_SESSION['error_usuario'].'</div>';
             unset($_SESSION['error_usuario']);
@@ -13,6 +14,7 @@
                         echo '<div class="alert alert-danger text-center">'.$_SESSION['error_contraseña'].'</div>';
                         unset($_SESSION['error_contraseña']);
                     } ;
+                    
                     ?>
                     <?php
                     if(isset($_SESSION['compra'])) {
@@ -47,7 +49,7 @@
   <div class="sesiones">
  
     <?php 
-
+          
             if(isset($_SESSION['id_cliente'])  ) { ?>
              <a href="views/misclaves.php" class="btn btn-info ms-2">Mis claves</a>
             <a class="btn btn-outline-success" href="views/carrito.php"><img src="assets/img/agregar-carrito.png" width="30px"></a>

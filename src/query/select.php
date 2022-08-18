@@ -9,7 +9,7 @@ use myapp\data\database;
 class select {
     public function Seleccionar($qry){
         try{
-            $cc = new Database("gravitygames", "root", "");
+            $cc = new Database("gravity_games", "root", "");
             $objetoPDO = $cc->getPDO();
             $resultado = $objetoPDO->query($qry);
             $filas = $resultado->fetchAll(PDO::FETCH_OBJ);

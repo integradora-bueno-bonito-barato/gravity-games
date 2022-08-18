@@ -26,11 +26,11 @@
 
             <?php
 
-use myapp\query\select;
+use MyApp\Query\Select;
 
 require_once('../vendor/autoload.php');
 
-$query = new select();
+$query = new Select();
 $chain = "SELECT * FROM juego";
 $result = $query->Seleccionar($chain);
 foreach($result as $filas){?>
