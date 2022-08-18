@@ -1,5 +1,4 @@
 <?php
-
 namespace myapp\query;
 use myapp\data\database;
 use PDOException;
@@ -65,7 +64,6 @@ class registrar {
         }
         $qry = "insert into persona (nombre, apellido, n_usuario, correo, contraseña2) values ('$nombre', '$apellidos', '$usuario', '$email', '$hash')";
         $objetoPDO->query($qry);
-
         $qry = "SELECT * FROM persona WHERE n_usuario = '$usuario' or correo = '$email'";
         $resultado = $objetoPDO->query($qry);
         $row = $resultado->fetch(PDO::FETCH_ASSOC);
