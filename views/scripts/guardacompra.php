@@ -8,6 +8,7 @@ use myapp\query\select;
         $cliente = $_SESSION['id_cliente'];
 
         extract($_POST);
+
    
         echo "$tarjeta"; 
         echo "$cliente";
@@ -23,6 +24,7 @@ use myapp\query\select;
             $_SESSION['color'] = "danger";
             $_SESSION['registrado'] = "CVV incorrecto";
             header('location: ../comprar.php');
+
             exit;
         }
         echo "$carrito";
