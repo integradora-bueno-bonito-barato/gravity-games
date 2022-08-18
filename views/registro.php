@@ -9,6 +9,7 @@
     <title>Registrarse</title>
 </head>
 <body class="bg-dark">
+    <?php session_start();?>
     <div class="container-fluid  text-white fs-4 p-3">
         <div class="row">
             <div class="navbar-brand d-inline">
