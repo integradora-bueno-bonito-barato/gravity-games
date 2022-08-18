@@ -26,7 +26,7 @@
             </div>
             <div class="col-md-4 p-4">
             <?php
-                    session_start();
+                    
                     if(isset($_SESSION['error_contraseña'])) {
                         echo '<div class="alert alert-danger text-center">'.$_SESSION['error_contraseña'].'</div>';
                         unset($_SESSION['error_contraseña']);

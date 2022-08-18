@@ -5,7 +5,7 @@
       <p class="m-0">Gravity games</p>
       </a>
       <?php
-      
+    
            if(isset($_SESSION['error_usuario'])) {
             echo '<div class="alert alert-danger text-center">'.$_SESSION['error_usuario'].'</div>';
             unset($_SESSION['error_usuario']);
