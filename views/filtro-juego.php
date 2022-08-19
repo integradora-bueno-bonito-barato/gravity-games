@@ -38,7 +38,7 @@
                     <div class="mb-2">
                     <h1><?php echo "$filas->juego" ?></h1>
                     </div>
-                    <p class=" fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis impedit cumque nihil repudiandae</p>
+                    <p class=" fs-5"> <?php echo "$filas->descripcion" ?> </p>
                     </div>
                     <div class="d-flex justify-content-around flex-wrap">
                     <p class="fs-4">Plataforma: <?php echo "$filas->plataforma" ?></p>
