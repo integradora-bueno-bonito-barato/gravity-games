@@ -32,6 +32,10 @@ use myapp\query\select;
         join carrito on carrito.id_carrito = orden_venta.carrito join cliente on cliente.id_cliente = 
         carrito.cliente where cliente = $cliente";
         $result = $query->Seleccionar($cadena);
+        if ($result == null) {
+            $_SESSION['error_contraseña'] = "No tienes claves";
+            header("Location: ../index.php");
+        }
         
 foreach($result as $filas){?>
     <div class="row">

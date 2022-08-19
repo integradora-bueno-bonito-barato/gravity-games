@@ -19,14 +19,14 @@ use myapp\query\select;
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $carrito = $row['id_carrito'];
         $cvv2 = $row['cvv'];
-        if($cvv2 != $cvv){
-            session_start();
-            $_SESSION['color'] = "danger";
-            $_SESSION['registrado'] = "CVV incorrecto";
-            header('location: ../comprar.php');
+        // if($cvv2 != $cvv){
+        //     session_start();
+        //     $_SESSION['color'] = "danger";
+        //     $_SESSION['registrado'] = "CVV incorrecto";
+        //     header('location: ../comprar.php');
 
-            exit;
-        }
+        //     exit;
+        // }
         echo "$carrito";
         $query = "select * from orden_venta where carrito = $carrito";
         $result = $objetoPDO->query($query);
