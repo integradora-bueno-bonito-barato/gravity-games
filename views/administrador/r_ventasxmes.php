@@ -113,14 +113,16 @@
     
             <?php
             foreach($tabla as $registro)
-            {
+            {   
+                $iva = number_format($registro->iva, 2);
+                $total = number_format($registro->total, 2);
                 echo"<tr>";
                 echo"<td> $registro->id_cliente </td>";
                 
                 echo"<td> $registro->fecha </td>";
                 echo"<td> $registro->subtotal </td>";
-                echo"<td> $registro->iva </td>";
-                echo"<td> $registro->total </td>";
+                echo"<td> $iva </td>";
+                echo"<td> $total </td>";
                 echo"<td> $registro->id_orden_venta </td>";
                 echo"</tr>";
             }

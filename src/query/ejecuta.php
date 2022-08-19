@@ -4,7 +4,7 @@ namespace myapp\query;
 use myapp\data\database;
 use PDOException;
 
-class Ejecuta {
+class ejecuta {
     public function ejecutar($qry){
         try {
             $cc = new database("gravity_games", "root", "");

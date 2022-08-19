@@ -2,10 +2,8 @@
 require_once("../../vendor/autoload.php");
 use myapp\query\select;
 $select = new select();
-$qry = "SELECT id_juego, nombre FROM juego";
-$juegos = $select->Seleccionar($qry);
-$qry = "SELECT * FROM genero";
-$generos = $select->Seleccionar($qry);
+$qry = "SELECT * from persona";
+$personas = $select->Seleccionar($qry);
 
 ?><!DOCTYPE html>
 <!DOCTYPE html>
@@ -14,7 +12,7 @@ $generos = $select->Seleccionar($qry);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Gestion de usuarios</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="paginaprincipal.css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
@@ -65,49 +63,42 @@ $generos = $select->Seleccionar($qry);
 
     <main  >
         <div class="row ">
-            <h1 class="text-white">Seleccionar un juego para modificar</h1>
+            <h1 class="text-white">Seleccionar cliente</h1>
             <?php if(isset($_SESSION['actualizado'])) { 
             echo '<div class="alert alert-danger text-center">'.$_SESSION['actualizado'].'</div>';
             unset($_SESSION['actualizado']);  } ?>
         </div>
       <div class="row">
       <form class="col-md-4 bg-light p-3 rounded-3" action="#" method="POST">
-        <label for="juego" class="form-label">Juego</label>
-        <select class="form-control" name="juego">
-            <?php foreach($juegos as $juego){ ?>
-                <option value="<?php echo $juego->id_juego; ?>"><?php echo $juego->nombre; ?></option>
+        <label for="cliente" class="form-label">Cliente</label>
+        <select class="form-control" name="cliente">
+            <?php foreach($personas as $persona){ ?>
+                <option value="<?php echo $persona->id_persona; ?>"><?php echo $persona->nombre; ?></option>
         <?php } ?>
         </select>
         <button class="btn btn-success mt-2" type="submit">Seleccionar</button>
       </form>
       <?php 
-      if(isset($_POST['juego'])){  
+      if(isset($_POST['cliente'])){  
         extract($_POST);
-        $qry = "SELECT * FROM juego WHERE id_juego = $juego";
-        $juegos = $select->Seleccionar($qry);
+        $qry = "SELECT * FROM persona WHERE id_persona = $cliente";
+        $persona = $select->Seleccionar($qry);
 
         ?>
-       <form class=" offset-md-1 col-md-6 bg-light p-3 rounded-3" action="cambiarjuego.php" method="POST">
+       <form class=" offset-md-1 col-md-6 bg-light p-3 rounded-3" action="cambiarcliente.php" method="POST">
         
-        <input type="hidden" value="<?php echo $juego?>" name="id_juego">
-        <label for="genero" class="form-label">Genero</label>
-        <select class="form-control" name="genero">
-            <?php foreach($generos as $genero){ ?>
-                <option value="<?php echo $genero->id_genero; ?>"><?php echo $genero->nombre; ?></option>
-        <?php } ?>
-        
-        </select>
-        <?php foreach($juegos as $fila) {?> 
-        <label for="nombre">Titulo: </label>
-        <input class="form-control mb-3" name="nombre" type="text" placeholder="<?php echo $fila->nombre ?>"> 
-        <label for="nombre">Plataforma: </label>
-        <input class="form-control mb-3" name="plataforma" type="text" placeholder="<?php echo $fila->plataforma ?>"> 
-        <label for="precio">Precio: </label>
-        <input class="form-control mb-3" name="precio" type="text" placeholder="<?php echo $fila->precio ?>"> 
-        <label for="precio">Descripcion: </label>
-        <input class="form-control mb-3" name="descripcion" type="text" placeholder="<?php echo $fila->descripcion ?>"> 
-        <label for="precio">img: </label>
-        <input class="form-control mb-3" name="img" type="text" placeholder="<?php echo $fila->img ?>"> 
+        <input type="hidden" value="<?php echo $cliente?>" name="id_persona">
+        <?php foreach($persona as $fila) {?> 
+        <label for="nombre">Nombre : </label>
+        <input class="form-control mb-3" name="nombre" type="text" placeholder="<?php echo $fila->nombre?>"> 
+        <label for="apellido">Apellidos : </label>
+        <input class="form-control mb-3" name="apellido" type="text" placeholder="<?php echo $fila->apellido ?>"> 
+        <label for="n_usuario">Nombre de usuario: </label>
+        <input class="form-control mb-3" name="n_usuario" type="text" placeholder="<?php echo $fila->n_usuario ?>"> 
+        <label for="correo">Correo Electronico: </label>
+        <input class="form-control mb-3" name="correo" type="text" placeholder="<?php echo $fila->correo ?>"> 
+        <label for="contrasena">password: </label>
+        <input class="form-control mb-3" name="contrasena2" type="text" placeholder="<?php echo $fila->contrasena2 ?>"> 
         
             
             

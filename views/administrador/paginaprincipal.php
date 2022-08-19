@@ -1,3 +1,6 @@
+<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +59,7 @@
     </div>
 
     <main >
-        <h1 class="text-center">Bienvenido! <?php echo "Administrador" ?></h1><br>
+        <h1 class="text-center">Bienvenido! <?php echo $_SESSION['n_usuario'] ?></h1>
 		<div class="d-flex me-5 gap-3 me-md-0 mt-5 justify-content-around flex-wrap">
         <a href="ventas.php">
         <div class="tarjeta">
@@ -70,7 +73,7 @@
 		
 		</div>
         </a>
-		<a href="">
+		<a href="modificarcliente.php">
         <div class="tarjeta">
 			<div class="titulo">Gestionar usuarios</div>
 			<div class="cuerpo">
