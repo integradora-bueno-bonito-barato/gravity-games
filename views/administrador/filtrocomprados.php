@@ -2,15 +2,15 @@
 require_once('../../vendor/autoload.php');
 use myapp\query\select;
 $select = new select();
-$qry = "select *, (subtotal_vendido * .16) as iva, (subtotal_vendido * .16 + subtotal_vendido) as total from subtotales_vendidos";
+$qry = "select  count(id_clave_vendida) as claves_vendidas,id_cliente from juego join clave on clave.juego = juego.id_juego join genero on genero.id_genero = juego.genero join claves_vendidas on claves_vendidas.clave = clave.id_clave join orden_venta on orden_venta.id_orden_venta = claves_vendidas.orden_venta join carrito on carrito.id_carrito = orden_venta.carrito join cliente on cliente.id_cliente = carrito.cliente group by id_cliente";
 
-$qry2 = "select *, (subtotal_vendido * .16) as iva, (subtotal_vendido * .16 + subtotal_vendido) as total from subtotales_vendidos";
+$qry2 = "select  count(id_clave_vendida) as claves_vendidas,id_cliente from juego join clave on clave.juego = juego.id_juego join genero on genero.id_genero = juego.genero join claves_vendidas on claves_vendidas.clave = clave.id_clave join orden_venta on orden_venta.id_orden_venta = claves_vendidas.orden_venta join carrito on carrito.id_carrito = orden_venta.carrito join cliente on cliente.id_cliente = carrito.cliente group by id_cliente";
     if (isset($_POST['formjuego'])){
         extract($_POST);
         if($formcompra != "todos") {
             
             echo $formcompra;
-            $qry = "select *, (subtotal_vendido * .16) as iva, (subtotal_vendido * .16 + subtotal_vendido) as total from subtotales_vendidos where id_juego = $formcompra";
+            $qry = "select  count(id_clave_vendida) as claves_vendidas,id_cliente from juego join clave on clave.juego = juego.id_juego join genero on genero.id_genero = juego.genero join claves_vendidas on claves_vendidas.clave = clave.id_clave join orden_venta on orden_venta.id_orden_venta = claves_vendidas.orden_venta join carrito on carrito.id_carrito = orden_venta.carrito join cliente on cliente.id_cliente = carrito.cliente group by id_cliente";
         } 
     }  
 
@@ -30,29 +30,25 @@ $result2 = $select->Seleccionar($qry2);
     <h1>juego Recaudado por cada cliente por compra</h1>
     <table border="1">
         <tr>
-        <th>id_cliente</th>
-            <th>nombre</th>
-            <th>Subtotal</th>
-            <th>Iva</th>
-            <th>Total</th>
+            <th>id_cliente</th>
+            <th>claves_vendidas</th>
+          
         </tr>
         <?php foreach($result as $compra) {  ?>
             <tr>
                 <td><?php echo $compra->id_cliente ?></td>
-                <td><?php echo $compra->nombre?></td>
-                <td><?php echo $compra->subtotal_vendido ?></td>
-                <td><?php echo $compra->iva ?></td>
-                <td><?php echo $compra->total ?></td>
+                <td><?php echo $compra->claves_vendidas?></td>
+               
             </tr>
 
             <?php } ?>
 
    <form action="#" method="POST">
-    <select name="formjuego">
-            <option value="todos">Todos las compras</option>
+    <select name="formcompra">
+            <option value="todos">seleccionar</option>
         <?php 
         foreach ($result2 as $juego)  { ?>
-            <option value="<?php echo $juego->id_cliente ?>"><?php echo $juego->nombre?></option>  
+            <option value="<?php echo $juego->id_cliente ?>"><?php echo $juego->claves_vendidas?></option>  
             
      <?php } ?>   
         
