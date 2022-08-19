@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +10,9 @@
     <link rel="stylesheet" href="paginaprincipal.css">
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
-<body class="body">
+<body class="body bg-dark">
     
-    <div class="menu__side bg-dark d-none d-md-block" id="menu_side">
+    <div class="menu__side bg-success d-none d-md-block" id="menu_side">
 
         <div class="options__menu">	
 
@@ -55,45 +54,30 @@
 
     </div>
 
-    <main >
-        <h1 class="text-center">Bienvenido! <?php echo "Administrador" ?></h1><br>
-		<div class="d-flex me-5 gap-3 me-md-0 mt-5 justify-content-around flex-wrap">
-        <a href="ventas.php">
-        <div class="tarjeta">
-			<div class="titulo">Reporte de ventas</div>
+    <main  >
+        <h1 class="text-light text-center">Bienvenido! <?php echo "Administrador" ?></h1><br>
+		<div class="d-flex flex-column align-items-center  me-5 gap-5 me-md-0 mt-5">
+        <a href="../claves-juegos.php">
+        <div class="tarjeta1">
+			<div class="titulo">Agregar videojuegos / claves</div>
 			<div class="cuerpo">
 			<img src="ventas.jpg" max-width="400" height="200">
-			<p>
-               La ultima venta fue: 
-			</p>
+			
 			</div>
 		
 		</div>
         </a>
-		<a href="">
-        <div class="tarjeta">
-			<div class="titulo">Gestionar usuarios</div>
+		<a href="modificarjuego.php">
+        <div class="tarjeta1">
+			<div class="titulo">Modificar videojuegos</div>
 			<div class="cuerpo">
 			<img src="ventas.jpg" max-width="400" height="200">
-			<p>
-               Las ventas: Dia 14/08/2022
-			</p>
+			
 			</div>
 		
 		</div>
         </a>
-        <a href="gestionjuego.php">
-        <div class="tarjeta">
-			<div class="titulo">Gestionar Videojuegos</div>
-			<div class="cuerpo">
-			<img src="ventas.jpg" max-width="400" height="200">
-			<p>
-               Las ventas: Dia 14/08/2022
-			</p>
-			</div>
-		
-		</div>
-        </a>
+        
         </div>
 		
 		

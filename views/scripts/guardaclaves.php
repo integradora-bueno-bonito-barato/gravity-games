@@ -1,6 +1,6 @@
 
         <?php
-        use MyApp\Query\Ejecuta;
+        use myapp\query\ejecuta;
         require("../../vendor/autoload.php");
         session_start();
         $cliente = $_SESSION['id_cliente'];

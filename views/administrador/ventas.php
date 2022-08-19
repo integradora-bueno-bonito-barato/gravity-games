@@ -1,53 +1,90 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ver Ventas</title>
-    <link rel="stylesheet" href="../../css 2.0/bootstrap.min.css">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="paginaprincipal.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
-<body>
-        <div class="container">
-        <a class="btn btn-primary" href="paginaprincipal.php">Regresar</a> 
-   
-            <h1 align="center">Orden de Venta</h1>
-            <?php
+<body class="body bg-dark">
+    
+    <div class="menu__side bg-success d-none d-md-block" id="menu_side">
 
+        <div class="options__menu">	
 
-use MyApp\query\select;
-        require("../../vendor/autoload.php");
-        
-        $query = new select();
-        $cadena =  "SELECT * FROM orden_venta";
-        $tabla = $query->Seleccionar($cadena);
-        
-        echo "<table class='table table-striped'>
-        <head class='table-dark'>
-        <tr>
-        <th>id_orden_venta</th><th>Carrito</th><th>Fecha</th><th>Tarjeta</th>
-        </tr>
-        </head>
-        <tbody>";
-        
-        foreach($tabla as $registro)
-        {
-            echo "<tr>";
-            echo "<td> $registro->id_orden_venta </td>";
-            echo "<td> $registro->carrito </td>";
-            echo "<td> $registro->fecha </td>";
-            echo "<td> $registro->tarjeta </td>";
-            echo "</tr>";
-        }
-        
-        echo "</tbody>
-        </table";
-        
-        ?>
+            <a href="paginaprincipal.php" class="selected">
+                <div class="option">
+                    <i class="fas fa-user" title="Perfil"></i>
+                    <h4>Peril</h4>
+                </div>
+            </a>
 
+            <a href="ventas.php">
+                <div class="option">
+					<i class="fas fa-magnifying-glass-dollar"></i>
+                    <h4>Ventas</h4>
+                </div>
+            </a>
+            
+            <a href="comentarios.php">
+                <div class="option">
+                    <i class="fas fa-comments" title="Cursos"></i>
+                    <h4>Comentarios</h4>
+                </div>
+            </a>
 
-</div>
+            <a href="../scripts/ver_clientes.php">
+                <div class="option">
+					<i class="fas fa-address-book"></i>
+                    <h4>Ventas</h4>
+                </div>
+            </a>
 
-<script src="../../js/bootstrap.bundle.js"></script>
+            <a href="../../index.php">
+                <div class="option">
+					<i class="fas fa-paper-plane"></i>
+                    <h4>Ventas</h4>
+                </div>
+            </a>
+		</div>
+
+    </div>
+
+    <main  >
+        <h1 class="text-light text-center">Bienvenido! <?php echo "Administrador" ?></h1><br>
+		<div class="d-flex flex-wrap justify-content-evenly align-items-center  me-5 gap-5 me-md-0 mt-5">
+        <a href="r_ventasxmes.php">
+        <div class="tarjeta1">
+			<div class="titulo">Reporte de ventas mensual</div>
+			<div class="cuerpo">
+			<img src="ventas.jpg" max-width="400" height="200">
+			
+			</div>
+		
+		</div>
+        </a>
+		<a href="">
+        <div class="tarjeta1">
+			<div class="titulo">Reporte por rango de fechas</div>
+			<div class="cuerpo">
+			<img src="ventas.jpg" max-width="400" height="200">
+			<p>
+               Las ventas: Dia 14/08/2022
+			</p>
+			</div>
+		
+		</div>
+        </a>
+        
+        </div>
+		
+		
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
