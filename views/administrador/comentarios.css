@@ -8,6 +8,10 @@
     display: flex;
    
   }
+
+  a {
+    text-decoration: none;
+  }
   
   .textbox{
     background-color:purple;
