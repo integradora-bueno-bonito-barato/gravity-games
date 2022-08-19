@@ -9,7 +9,7 @@
 }
 
 body{ 
-	background-color:green;
+	
     margin-left: 80px;
     margin-top: 80px;
     transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -155,7 +155,18 @@ a.selected{
         left: -80px;
     }
 }
+a {
+    text-align: center;
+    color: #4a4a4a;
+    text-decoration: none;
+    transition: all 400ms;
+  }
 
+    a:hover {
+        background-color: #3a3a3a;
+        color: #fafafa;
+        text-decoration: underline;
+    }
 .tarjeta{
 display:flex;
 flex-direction:column;
@@ -230,31 +241,5 @@ content: ""
 	top: 2px;
 	height: 43px;
 	}
-    .boton
-	{
-	text-decoration: none;
-	text-align: center;
-	color: white;
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1;
-	content: ""
-	
-	}
-	p{
-		text-align: center;
-	}
-    .boton2{
-        text-decoration: none;
-        text-align: center;
-        color: white;
-        position: absolute;
-        right: 850px;
-       
-        left:130px;
-        z-index: 1;
-        content: ""
-    }
+    
 

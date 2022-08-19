@@ -6,15 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="paginaprincipal.css">
-	
-
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
 <body class="body">
     
-    <div class="menu__side" id="menu_side">
+    <div class="menu__side bg-dark" id="menu_side">
 
         <div class="options__menu">	
 
@@ -56,32 +54,34 @@
 
     </div>
 
-    <main>
-        <h1>Bienvenido Administrador</h1><br>
-		<div class="tarjeta">
-			<div class="titulo">Ventas</div>
+    <main >
+        <h1 class="text-center">Bienvenido! <?php echo "Administardor" ?></h1><br>
+		<div class="d-flex mt-5 justify-content-around flex-wrap">
+        <a href="ventas.php">
+        <div class="tarjeta">
+			<div class="titulo">Reporte de ventas</div>
 			<div class="cuerpo">
-			<img src="ventas.jpg" width="400" height="200">
+			<img src="ventas.jpg" max-width="400" height="200">
+			<p>
+               La ultima venta fue: 
+			</p>
+			</div>
+		
+		</div>
+        </a>
+		<a href="">
+        <div class="tarjeta">
+			<div class="titulo">Gestionar usuarios</div>
+			<div class="cuerpo">
+			<img src="ventas.jpg" max-width="400" height="200">
 			<p>
                Las ventas: Dia 14/08/2022
 			</p>
 			</div>
-		<div class="pie">
-			<a class="boton2" href="ventas.php">Más informaciòn</a>
+		
 		</div>
-		</div><br>
-		<div class="tarjeta2">
-			<div class="titulo2">Comentarios</div>
-			<div class="cuerpo2">
-			<img src="comentarios1.png" width="400" height="200">
-			<p>
-               Los comentarios del dia 14/08/2022
-			</p>
-			</div>
-			<div class="pie2">
-			<a class="boton" href="comentarios.php">Más información</a>
-			</div>
-		</div><br>
+        </a>
+        </div>
 		
 		
     </main>
