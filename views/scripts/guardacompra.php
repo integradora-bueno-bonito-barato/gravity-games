@@ -19,14 +19,36 @@ use myapp\query\select;
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $carrito = $row['id_carrito'];
         $cvv2 = $row['cvv'];
-        // if($cvv2 != $cvv){
-        //     session_start();
-        //     $_SESSION['color'] = "danger";
-        //     $_SESSION['registrado'] = "CVV incorrecto";
-        //     header('location: ../comprar.php');
+         if($cvv2 != $cvv){
+             session_start();
+             $_SESSION['color'] = "danger";
+             $_SESSION['registrado'] = "CVV incorrectosz";
+             header('location: ../comprar.php');
 
-        //     exit;
-        // }
+
+         }
+         //comprobacion
+         
+        $query2 = "select * from cliente join carrito on cliente.id_cliente = carrito.cliente join tarjetas on tarjetas.cliente = cliente.id_cliente where cliente.id_cliente = $cliente and tarjetas.exp = '$fechax'";
+        $result2 = $objetoPDO->query($query2);
+        $row2 = $result2->fetch(PDO::FETCH_ASSOC);
+        $carrito2 = $row2['id_carrito'];
+        $fecha2 = $row2['exp'];
+        //echo"carrito: $carrito2 <br>";
+        //echo"fecha: $fecha2<br>";
+        //echo"fecha: $fechax<br>";
+        //echo"usuario: $cliente<br>";
+         if($fecha2 != $fechax ){
+             session_start();
+             $_SESSION['color'] = "danger";
+             $_SESSION['registrado'] = "Fecha de expiracion o cvv incorrectos";
+             header('location: ../comprar.php');
+
+             exit;
+         }
+
+
+
         echo "$carrito";
         $query = "select * from orden_venta where carrito = $carrito";
         $result = $objetoPDO->query($query);
@@ -52,6 +74,11 @@ use myapp\query\select;
             $result = $objetoPDO->query($query);
             echo "insertado";
         }
+        
+            
+            $query3 = "DELETE from item_carrito where carrito = $carrito";
+            $result = $objetoPDO->query($query3);
+
         $_SESSION['compra'] = "Compra realizada";
         header('location: ../../index.php');
 ?>

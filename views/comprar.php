@@ -94,7 +94,9 @@ $n = 0;
                                         <?php } ?>
                             ?>
                         </select><br>
-                
+                        <div class="fs-2"><label for="fechax" class="">Fecha de  Expiracion</label></div>
+                <input type="text" maxlength="5" name="fechax" id="" required class="form-control"><br><br>
+
                 <div class="fs-2"><label for="cvv" class="">Codigo de seguridad</label></div>
                 <input type="text" maxlength="3" name="cvv" id="" required class="form-control"><br><br>
                 <button type="submit" class="btn btn-success  d-block w-100">Comprar</button><br>
