@@ -22,10 +22,10 @@ use myapp\query\select;
          if($cvv2 != $cvv){
              session_start();
              $_SESSION['color'] = "danger";
-             $_SESSION['registrado'] = "CVV incorrectosz";
+             $_SESSION['registrado'] = "Fecha de expiracion o cvv incorrectos";
              header('location: ../comprar.php');
 
-
+            exit;
          }
          //comprobacion
          
