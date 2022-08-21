@@ -67,7 +67,7 @@
 		
 		</div>
         </a>
-		<a href="">
+		<a href="r_ventasxfecha.php">
         <div class="tarjeta1">
 			<div class="titulo">Reporte por rango de fechas</div>
 			<div class="cuerpo">
