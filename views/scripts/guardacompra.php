@@ -14,15 +14,17 @@ use myapp\query\select;
         echo "$cliente";
         $cc = new database("gravity_games", "root", "");
         $objetoPDO = $cc->getPDO();
-        $query = "select * from cliente join carrito on cliente.id_cliente = carrito.cliente join tarjetas on tarjetas.cliente = cliente.id_cliente where cliente.id_cliente = $cliente";
+        $query = "select * from cliente join carrito on cliente.id_cliente = carrito.cliente join tarjetas on tarjetas.cliente = cliente.id_cliente where tarjetas.id_tarjetas = $tarjeta";
         $result = $objetoPDO->query($query);
         $row = $result->fetch(PDO::FETCH_ASSOC);
         $carrito = $row['id_carrito'];
         $cvv2 = $row['cvv'];
+        echo "CVV2 :" . $cvv2; "<br>";
+        echo "CCV :"  . $cvv; "<br>";
          if($cvv2 != $cvv){
              session_start();
              $_SESSION['color'] = "danger";
-             $_SESSION['registrado'] = "Fecha de expiracion o cvv incorrectos";
+             $_SESSION['registrado'] = "CVV incorrecto";
              header('location: ../comprar.php');
 
             exit;
@@ -41,7 +43,7 @@ use myapp\query\select;
          if($fecha2 != $fechax ){
              session_start();
              $_SESSION['color'] = "danger";
-             $_SESSION['registrado'] = "Fecha de expiracion o cvv incorrectos";
+             $_SESSION['registrado'] = "Fecha de expiracion incorrecta";
              header('location: ../comprar.php');
 
              exit;
