@@ -32,7 +32,7 @@ require_once ("../vendor/autoload.php");
         </div>
       </div>
       <div class="row p-3">
-        <div class="col-md-4 bg-light border border-success">
+        <div class="col-md-4 bg-light border border-success p-3 bg-dark text-light">
             <h1 class="text-center mb-3">Filtros</h1>
             <form class="p-2" method="POST" action="#">
                 <label class="form-label fs-5" for="genero">Genero:</label>
